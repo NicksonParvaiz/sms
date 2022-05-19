@@ -1,0 +1,16 @@
+.sidebar{
+    background-color: rgb(255, 255, 255);
+    width: 220px;
+    height: 91.5vh;
+    box-shadow: 8px 0px 6px -5px rgb(202, 202, 202);
+    transform: translateX(0px);
+    position: absolute;
+}   
+ 
+
+.sidebar-icon{
+    width: 30px;
+}
+a{
+    text-decoration: none;
+}
