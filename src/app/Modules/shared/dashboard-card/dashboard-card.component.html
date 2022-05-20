@@ -1,0 +1,16 @@
+<div class="card p-3  ms-3 pop-up shadow-sm  " style="min-width: 200px">
+    <div class="d-flex b pt-0">
+        <div class="d-flex flex-wrap align-content-center">
+            <ng-content select="[icon]"></ng-content>
+
+        </div>
+        <div class="p-1 ps-3">
+            <ng-content select="[title]"></ng-content>            
+            <ng-content select="[value]"></ng-content>
+            
+            <div class=" d-flex ">
+                <ng-content select="[status]"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

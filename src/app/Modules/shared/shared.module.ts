@@ -14,11 +14,13 @@ import { EmailSendingComponent } from './email-sending/email-sending.component';
 import { DateFilterComponent } from './date-filter/date-filter.component';
 import { LineGraphComponent } from './line-graph/line-graph.component';
 import { DonutGraphComponent } from './donut-graph/donut-graph.component';
-import { CardComponent } from './card/card.component';
 import { ButtonComponent } from './button/button.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
+import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
+import { FilterButtonComponent } from './filter-button/filter-button.component';
+import { StudentFilterComponent } from './student-filter/student-filter.component';
 
 
 @NgModule({
@@ -34,11 +36,13 @@ import { MainComponent } from './main/main.component';
     DateFilterComponent,
     LineGraphComponent,
     DonutGraphComponent,
-    CardComponent,
     ButtonComponent,
     HeaderComponent,
     SidebarComponent,
-    MainComponent
+    MainComponent,
+    DashboardCardComponent,
+    FilterButtonComponent,
+    StudentFilterComponent
   ],
   imports: [
     CommonModule,
@@ -54,11 +58,14 @@ import { MainComponent } from './main/main.component';
     StudentProgressComponent,
     AttendanceComponent,
     EmailSendingComponent,
+    HeaderComponent,
     DateFilterComponent,
     LineGraphComponent,
     DonutGraphComponent,
-    CardComponent,
+    SidebarComponent,
+    DashboardCardComponent,
     ButtonComponent
+
   ]
 })
 export class SharedModule { }

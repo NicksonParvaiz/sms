@@ -11,5 +11,12 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  filterShow = true;
+
+  toggleFilter(){
+    this.filterShow = !this.filterShow;
+  }
+  
+
 
 }

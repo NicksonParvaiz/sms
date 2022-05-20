@@ -1,1 +1,281 @@
-<p>students works!</p>
+<div class="row w-100  ps-5 ps-md-0 ps-lg-0 ">
+
+
+    <div class="col-lg-6">
+        <div class=" d-flex justify-content-end my-2">
+            <app-filter-button class="me-2" (click)="toggleFilter()"></app-filter-button>
+
+            <app-student-filter *ngIf="filterShow" class="student-filter" ></app-student-filter>
+
+        </div>
+        <div class="border rounded pop-up shadow-sm student-list p-3 pt-1">
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Father's Name</th>
+                        <th>Class</th>
+                        <th>View Profile</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>John</td>
+                        <td>Ericson</td>
+                        <td>3rd</td>
+                        <td class="d-flex justify-content-center">
+                            <app-button bg="bg-secondary px-3 py-1">more</app-button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6 mt-4 pt-3">
+        <div class="student-detail border shadow-sm rounded p-3 pop-up">
+            <div class="header p-2 d-flex">
+                <div>
+                    <img src="/assets/images/student.jpg" width="100" class="rounded-circle" alt="">
+                </div>
+                <div class="w-100 d-flex flex-wrap align-content-center ">
+                    <div class="w-100 ps-2 pt-3">
+                        <h5>John</h5>
+                        <hr class="my-0 ">
+                        <p>Ericson</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== Academic ====================  -->
+
+            <div class="academic-info mt-1 px-3 ">
+
+                <div class="d-flex justify-content-between pe-2">
+                    <h5>
+                        Academic Info
+                    </h5>
+                    <app-button bg="bg-secondary px-2">Edit</app-button>
+                </div>
+                <hr class="my-0">
+
+                <div class="detail  pt-2">
+
+
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            <span>Roll no.</span>
+                        </div>
+                        <div class="col-8">
+                            <span>321</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 ">
+                        <div class="col-4">
+                            <span>Class</span>
+                        </div>
+                        <div class="col-8">
+                            <span>3rd Green</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            <span>Class Teacher</span>
+                        </div>
+                        <div class="col-8">
+                            <span>Sir Subhan</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="personal-info mt-5 px-3">
+
+                <div class="d-flex justify-content-between pe-2">
+                    <h5>
+                        Personal Info
+                    </h5>
+                    <app-button bg="bg-secondary px-2">Edit</app-button>
+                </div>
+                <hr class="my-0">
+
+                <div class="detail  pt-2">
+
+
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            <span>Phone</span>
+                        </div>
+                        <div class="col-8">
+                            <span>0340-123457</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 ">
+                        <div class="col-4">
+                            <span>Email</span>
+                        </div>
+                        <div class="col-8">
+                            <span>johnErice@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            <span>Address</span>
+                        </div>
+                        <div class="col-8">
+                            <span>Ho. 109 st 8 Sector F-48 Korangi Karachi </span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            <span>Date of Birth</span>
+                        </div>
+                        <div class="col-8">
+                            <span>2nd April 2017</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            <span>CNIC</span>
+                        </div>
+                        <div class="col-8">
+                            <span>42201-1307956-3</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="d-flex justify-content-end mt-2">
+                <app-button bg="bg-secondary px-2 py-1 me-3">View Progress</app-button>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

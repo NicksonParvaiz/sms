@@ -1,0 +1,11 @@
+.sidebar-collapse{
+    transform: translateX(-160px);
+    transition: 0.5s;
+}
+
+.sidebar-expand{
+    transition: 0.5s;
+    transform: translateX(0px);
+}
+ 
+ 

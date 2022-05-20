@@ -1,6 +1,6 @@
 import { SidebarService } from './../sidebar/sidebar.service';
-import { Component, OnInit } from '@angular/core';
-import { faBell , faCaretDown , faBars   } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { faBell , faCaretDown , faBars ,faAngleLeft, faEarListen  } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { faBell , faCaretDown , faBars   } from '@fortawesome/free-solid-svg-ico
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit , DoCheck {
 
   constructor(private sidebar : SidebarService) { }
   notificationIcon = faBell;
@@ -18,6 +18,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngDoCheck(): void {
+    if(this.sidebar.isExpand){
+      this.menuIcon = faAngleLeft; 
+    }
+    else{
+      this.menuIcon = faBars; 
+    }
+  }
   sidebarToggle(){
       this.sidebar.isExpand = !this.sidebar.isExpand;
   }

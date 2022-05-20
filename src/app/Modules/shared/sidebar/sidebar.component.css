@@ -4,8 +4,21 @@
     height: 91.5vh;
     box-shadow: 8px 0px 6px -5px rgb(202, 202, 202);
     transform: translateX(0px);
-    position: absolute;
-}   
+    position: fixed;
+    top: 62px;
+    z-index: 1;
+}
+
+.sidebar-collapse{
+    transform: translateX(-160px);
+    transition: 0.5s;
+}
+
+.sidebar-expand{
+    transition: 0.5s;
+    transform: translateX(0px);
+}
+
  
 
 .sidebar-icon{

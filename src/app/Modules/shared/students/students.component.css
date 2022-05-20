@@ -1,0 +1,29 @@
+.student-list {
+    height: 595px;
+    overflow-y: auto;
+}
+
+th {
+    font-weight: 500;
+}
+
+thead  {
+    position: sticky;
+    z-index: 3;
+    top: -20px;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+}
+
+.student-detail{
+    height: 595px;
+} 
+
+.student-filter{
+    height: 260px;
+    width: 300px;
+    font-weight: 500;
+    position: absolute;
+    top: 136px;
+    z-index: 1;
+}

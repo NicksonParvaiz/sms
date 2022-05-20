@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<app-sidebar></app-sidebar>
+
+<div class=" ">
+
+    <div class="row mt-5 pt-5 w-100  ">
+
+        <div class=" " [ngClass]="{'col-md-2': sideBarExpand , 'col-md-1': !sideBarExpand  }">
+
+        </div>
+
+        <div class="  " [ngClass]="{'col-md-10': sideBarExpand , 'col-md-11': !sideBarExpand  }">
+
+
+            <!-- <app-admin-dashboard></app-admin-dashboard> -->
+            <app-admin-main></app-admin-main>
+            
+            
+        </div>
+
+    </div>
+
+
+</div>

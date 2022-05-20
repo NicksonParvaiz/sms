@@ -1,32 +1,32 @@
-<div class="sidebar ">
+<div class="sidebar" [ngClass]="{'sidebar-expand': isExpand , 'sidebar-collapse': !isExpand }">
     <ul class="list-group">
-        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active"  >
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"  >
             <li class="list-group-item py-3 d-flex justify-content-between">
-                <span class=" fw-bold">Dashboard</span>
+                <span class="ms-2">Dashboard</span>
                 <img src="/assets/images/icons/dashboard.jpg" class="sidebar-icon " alt="">
             </li>
         </a>
-        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active"  >
+        <a [routerLink]="['/student']" routerLinkActive="router-link-active"  >
             <li class="list-group-item py-3 d-flex justify-content-between">
-                <span class=" fw-bold">Students</span>
+                <span class="ms-2">Students</span>
                 <img src="/assets/images/icons/student-icon.jpg" class="sidebar-icon " alt="">
             </li>
         </a>
-        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active"  >
+        <a [routerLink]="['/faculty']" routerLinkActive="router-link-active"  >
             <li class="list-group-item py-3 d-flex justify-content-between">
-                <span class=" fw-bold">Faculty</span>
+                <span class="ms-2">Faculty</span>
                 <img src="/assets/images/icons/teaching-icon.png" class="sidebar-icon " alt="">
             </li>
         </a>
         <a [routerLink]="['/routePath']" routerLinkActive="router-link-active"  >
             <li class="list-group-item py-3 d-flex justify-content-between">
-                <span class=" fw-bold">Noticeboard</span>
+                <span class="ms-2">Noticeboard</span>
                 <img src="/assets/images/icons/notice-board.jpg" class="sidebar-icon " alt="">
             </li>
         </a>
         <a [routerLink]="['/routePath']" routerLinkActive="router-link-active"  >
             <li class="list-group-item py-3 d-flex justify-content-between">
-                <span class=" fw-bold">Accounts</span>
+                <span class="ms-2">Accounts</span>
                 <img src="/assets/images/icons/dollar.png" class="sidebar-icon " alt="">
             </li>
         </a>

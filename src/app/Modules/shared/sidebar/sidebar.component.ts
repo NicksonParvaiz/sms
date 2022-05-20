@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SidebarService } from './sidebar.service';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { faChartLine , faGraduationCap , faPersonChalkboard} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,12 +7,20 @@ import { faChartLine , faGraduationCap , faPersonChalkboard} from '@fortawesome/
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit , DoCheck{
 
-  constructor() { }
+  constructor(private sidebar : SidebarService ) { }
   dashboardIcon = faChartLine;
+
+  isExpand : boolean;
+
 
   ngOnInit(): void {
   }
 
+  ngDoCheck(): void {
+
+    this.isExpand = this.sidebar.isExpand;
+    
+  }
 }
