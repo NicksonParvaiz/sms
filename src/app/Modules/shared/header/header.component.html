@@ -7,9 +7,10 @@
   <div class="d-flex">
 
     <div class="right-side">
-
-      <fa-icon [icon]="notificationIcon"></fa-icon>
-      <span>2</span>
+      <a [routerLink]="['/notification']" routerLinkActive="router-link-active">
+        <fa-icon [icon]="notificationIcon"></fa-icon>
+        <span>2</span>
+      </a>
       <span class="me-2 ms-4" id="dropdownMenuButton1" data-bs-toggle="dropdown">Nickson</span>
       <fa-icon [icon]="dropDownIcon"></fa-icon>
     </div>

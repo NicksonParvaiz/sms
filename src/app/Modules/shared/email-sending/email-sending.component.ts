@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowLeft  } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-email-sending',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class EmailSendingComponent implements OnInit {
 
   constructor() { }
-
+  backIcon = faArrowLeft;
   ngOnInit(): void {
   }
 

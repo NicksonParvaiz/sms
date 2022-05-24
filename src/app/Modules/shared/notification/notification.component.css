@@ -1,6 +1,9 @@
-.list{
+.list {
     height: 300px;
-    overflow: auto;
+    overflow-y: auto;
 }
 
-
+.notification-detail{
+    height: 575px;
+    overflow-y: auto;
+}

@@ -1,0 +1,58 @@
+<div class="p-5 pt-0 ms-5 ms-lg-0 ">
+    <div class="d-flex justify-content-between">
+        <h1 class=" ms-lg-0 ">Accounts</h1>
+        <app-filter-button class="me-4 mt-2" (click)="toggleFilter()"></app-filter-button>
+    </div>
+
+    <div class="d-flex justify-content-end ">
+        <div class="accounts-filter p-4 col-lg-3 col-8 rounded pop-up  shadow bg-white" *ngIf="filterIsShow">
+            <form>
+                <div class="form-group ">
+                    <label>From</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group mt-3">
+                    <label>To</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group mt-3 d-flex justify-content-end mt-5">
+                    <app-button bg="bg-secondary px-3 py-1">Apply Filter</app-button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="row shadow-sm border rounded p-4 px-0 px-lg-4 mt-lg-4 mt-4 ">
+        <div class="col-lg-12">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="nav-item">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button">All</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button">Fees</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                        type="button">Salary</button>
+                </li>
+
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active p-2 py-3" id="home-tab-pane" tabindex="0">
+                    <img src="/assets/images/graph.jpg" class="w-100" alt="">
+                </div>
+                <div class="tab-pane fade p-2 py-3" id="profile-tab-pane" tabindex="0">
+                    <img src="/assets/images/graph.jpg" class="w-100" alt="">
+                </div>
+                <div class="tab-pane fade p-2 py-3" id="contact-tab-pane" tabindex="0">
+                    <img src="/assets/images/graph.jpg" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

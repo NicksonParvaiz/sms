@@ -21,6 +21,8 @@ import { MainComponent } from './main/main.component';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { FilterButtonComponent } from './filter-button/filter-button.component';
 import { StudentFilterComponent } from './student-filter/student-filter.component';
+import { NotificationPanelComponent } from './notification-panel/notification-panel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -42,12 +44,15 @@ import { StudentFilterComponent } from './student-filter/student-filter.componen
     MainComponent,
     DashboardCardComponent,
     FilterButtonComponent,
-    StudentFilterComponent
+    StudentFilterComponent,
+    NotificationPanelComponent
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     DashboardComponent,
@@ -58,13 +63,17 @@ import { StudentFilterComponent } from './student-filter/student-filter.componen
     StudentProgressComponent,
     AttendanceComponent,
     EmailSendingComponent,
-    HeaderComponent,
     DateFilterComponent,
     LineGraphComponent,
     DonutGraphComponent,
+    ButtonComponent,
+    HeaderComponent,
     SidebarComponent,
+    MainComponent,
     DashboardCardComponent,
-    ButtonComponent
+    FilterButtonComponent,
+    StudentFilterComponent,
+    NotificationPanelComponent
 
   ]
 })

@@ -1,3 +1,4 @@
+import { NoticeService } from './../../../Services/notice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticeboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private noticeServices: NoticeService) { }
 
+  data = [];
   ngOnInit(): void {
+    this.data = this.noticeServices.get(); 
   }
 
 }

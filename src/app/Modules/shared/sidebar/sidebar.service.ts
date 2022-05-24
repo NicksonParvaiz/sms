@@ -7,7 +7,7 @@ export class SidebarService {
 
   constructor() { }
 
-  isExpand = true;
+  isExpand = false;
 
 
 

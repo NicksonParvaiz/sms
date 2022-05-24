@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowLeft , faImage} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-notice-form',
@@ -8,8 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class NoticeFormComponent implements OnInit {
 
   constructor() { }
+  backIcon = faArrowLeft;
+  imagePlaceHolder = faImage  ;
 
   ngOnInit(): void {
   }
+ 
 
 }

@@ -1,69 +1,71 @@
 <div class="p-3 bg-white shadow rounded">
 
+    <form  [formGroup]="FilterForm" (ngSubmit)="submitFilter()" >
 
-    <!-- ------------------ Class ------------------ -->
-    <div class="row mt-2">
-        <div class="col-5 d-flex flex-wrap align-content-center">
-            <label class="" >Class</label>
+        <!-- ------------------ Class ------------------ -->
+        <div class="row mt-2">
+            <div class="col-5 d-flex flex-wrap align-content-center">
+                <label class="">Class</label>
+            </div>
+            <div class="col-7">
+                <select name="" class="form-select" formControlName="class" >
+                    <option value="1st">1st </option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd">3rd </option>
+                    <option value="4th">4th </option>
+                </select>
+            </div>
         </div>
-        <div class="col-7">
-            <select name="" class="form-select" id="">
-                <option value="">1st </option>
-                <option value="">2nd</option>
-                <option value="">3rd </option>
-                <option value="">4th </option>
-            </select>
+        <!-- ------------------ Section ------------------ -->
+
+        <div class="row mt-2">
+            <div class="col-5 d-flex flex-wrap align-content-center">
+                <label class="">Section</label>
+            </div>
+            <div class="col-7">
+                <select name="" class="form-select" formControlName="section">
+                    <option value="Green">Green</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Yellow">Yellow</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <!-- ------------------ Section ------------------ -->
 
-    <div class="row mt-2">
-        <div class="col-5 d-flex flex-wrap align-content-center">
-            <label class="" >Section</label>
+        <!-- ------------------ Class Teacher ------------------ -->
+
+        <div class="row mt-2">
+            <div class="col-5 d-flex flex-wrap align-content-center">
+                <label class="">Class Teacher</label>
+            </div>
+            <div class="col-7 ">
+                <select name="" class="form-select " formControlName="classTeacher">
+                    <option value="Sir Subhan">Sir Subhan</option>
+                    <option value="Sir Farhan">Sir Farhan</option>
+                    <option value="Sir Harry">Sir Harry</option>
+                    <option value="Mis Nazish">Mis Nazish</option>
+                </select>
+            </div>
         </div>
-        <div class="col-7">
-            <select name="" class="form-select" id="">
-                <option value="">Green</option>
-                <option value="">Red</option>
-                <option value="">Blue</option>
-                <option value="">Yellow</option>
-            </select>
+
+        <!-- ------------------ Fee Status ------------------ -->
+
+        <div class="row mt-2">
+            <div class="col-5 d-flex flex-wrap align-content-center">
+                <label class="">Fee Status </label>
+            </div>
+            <div class="col-7 ">
+                <select name="" class="form-select " formControlName="feeStatus">
+                    <option value="Paid">Paid</option>
+                    <option value="Un paid">Un paid</option>
+
+                </select>
+            </div>
         </div>
-    </div>
 
-    <!-- ------------------ Class Teacher ------------------ -->
-
-    <div class="row mt-2">
-        <div class="col-5 d-flex flex-wrap align-content-center">
-            <label class="" >Class Teacher</label>
+        <div class="d-flex justify-content-end mt-3">
+            <app-button bg="bg-secondary px-3 py-1" >Apply Filter</app-button>
         </div>
-        <div class="col-7 ">
-            <select name="" class="form-select " id="">
-                <option value="">Sir Subhan</option>
-                <option value="">Sir Farhan</option>
-                <option value="">Sir Harry</option>
-                <option value="">Mis Nazish</option>
-            </select>
-        </div>
-    </div>
 
-    <!-- ------------------ Fee Status ------------------ -->
-
-    <div class="row mt-2">
-        <div class="col-5 d-flex flex-wrap align-content-center">
-            <label class="" >Fee Status </label>
-        </div>
-        <div class="col-7 ">
-            <select name="" class="form-select " id="">
-                <option value="">Paid</option>
-                <option value="">Un paid</option>
-
-            </select>
-        </div>
-    </div>
-
-    <div class="d-flex justify-content-end mt-3">
-        <app-button bg="bg-secondary px-3 py-1" (click)="submitFilter()">Apply Filter</app-button>
-    </div>
-
+    </form>
 </div>

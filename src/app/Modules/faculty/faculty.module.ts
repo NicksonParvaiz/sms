@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,6 +7,9 @@ import { AssignmentSubmissionsComponent } from './assignment-submissions/assignm
 import { AttendanceMarkingComponent } from './attendance-marking/attendance-marking.component';
 import { AssignmentFormComponent } from './assignment-form/assignment-form.component';
 import { FacultyDashboardComponent } from './faculty-dashboard/faculty-dashboard.component';
+import { AcademicInfoEidtFormComponent } from './academic-info-eidt-form/academic-info-eidt-form.component';
+import { PersonalInfoEidtFormComponent } from './personal-info-eidt-form/personal-info-eidt-form.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -13,11 +17,15 @@ import { FacultyDashboardComponent } from './faculty-dashboard/faculty-dashboard
     AssignmentSubmissionsComponent,
     AttendanceMarkingComponent,
     AssignmentFormComponent,
-    FacultyDashboardComponent
+    FacultyDashboardComponent,
+    AcademicInfoEidtFormComponent,
+    PersonalInfoEidtFormComponent
   ],
   imports: [
     CommonModule,
-    FacultyRoutingModule
+    FacultyRoutingModule,
+    SharedModule,
+    FontAwesomeModule
   ]
 })
 export class FacultyModule { }

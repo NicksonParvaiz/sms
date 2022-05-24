@@ -22,7 +22,7 @@ import { MainComponent } from './main-template/main/main.component';
     AuthModule,
     SharedModule,
     FontAwesomeModule,
-    AdminModule
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
