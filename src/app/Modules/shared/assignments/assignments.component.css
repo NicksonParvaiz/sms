@@ -1,0 +1,5 @@
+.assignment-list{
+    width: 98%;
+    height: 77vh;
+    overflow-y: auto;
+}

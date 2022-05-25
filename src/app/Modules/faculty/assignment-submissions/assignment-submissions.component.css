@@ -1,0 +1,11 @@
+.assignments-submissions{
+    height: 80vh;
+    overflow-y: auto;
+}
+.filter{
+    width: 300px;
+    position: absolute;
+    right: 25px;
+    top: 160px;
+    z-index: 1;
+}

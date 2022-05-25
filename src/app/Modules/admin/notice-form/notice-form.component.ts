@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { faArrowLeft , faImage} from '@fortawesome/free-solid-svg-icons';
+import { NoticeService } from './../../../Services/notice.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { faArrowLeft, faImage } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,12 +11,39 @@ import { faArrowLeft , faImage} from '@fortawesome/free-solid-svg-icons';
 })
 export class NoticeFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private NoticeService:NoticeService) { }
   backIcon = faArrowLeft;
-  imagePlaceHolder = faImage  ;
+  imagePlaceHolder = faImage;
+
+  NoticeForm: FormGroup;
+  imgLink = './assets/images/image-placeholder.png';
 
   ngOnInit(): void {
+    this.NoticeForm = new FormGroup({
+      'title': new FormControl('' , [Validators.required  , Validators.minLength(10)]),
+      'description': new FormControl('' ,[Validators.required , Validators.minLength(50)]),
+      'privacyStatus': new FormControl('',[Validators.required]),
+      'imgUrl': new FormControl('',[Validators.required])
+
+    });
+
   }
- 
+
+  PreviewImage(data: any) {
+    let reader = new FileReader();
+    reader.readAsDataURL(data.target.files[0]);
+    reader.onload = (event: any) => {
+      this.imgLink = event.target.result;
+    }
+  }
+
+
+
+  AddNotice() {
+    console.log(this.NoticeForm);
+    this.NoticeService.add(this.NoticeForm.value)
+  }
+
+
 
 }

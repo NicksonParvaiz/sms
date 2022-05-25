@@ -1,53 +1,62 @@
-<div class="p-4">
-    <a [routerLink]="['/noticeboard']" routerLinkActive="router-link-active" class="my-3">
-        <app-button bg="bg-secondary px-3 ms-3 ms-lg-0 py-1">
+<div class="p-4 ">
+    <!-- <a [routerLink]="['/noticeboard']" routerLinkActive="router-link-active" class="my-3">
+        <app-button bg="bg-secondary px-3 ms-4 ms-lg-0 py-1">
             <fa-icon [icon]="backIcon"></fa-icon>
             back
         </app-button>
-    </a>
-    <div class="row  border shadow-sm pop-up rounded p-md-5 p-3 ms-3 ms-lg-0 mt-3">
+    </a> -->
+    <form [formGroup]="NoticeForm" (ngSubmit)="AddNotice()">
+        <div class="row  border shadow-sm pop-up rounded p-md-5 p-3 ms-3 ms-lg-0 mt-3">
 
-        <div class="col-lg-6">
-            <div class="">
-                <h1>Send Notice</h1>
-                <form >
+            <div class="col-lg-6">
+                <div class="">
+                    <h1>Send Notice</h1>
                     <div class="form-group mt-3">
                         <label>Title</label>
-                        <input type="text" class="form-control" name="" id="">
+                        <input type="text" class="form-control" formControlName="title" id="title" required>
+                        <span class="text-danger"
+                            *ngIf="NoticeForm.get('title').invalid && NoticeForm.get('title').touched ">
+                            Title should be atleast 10 characters
+                        </span>
                     </div>
 
                     <div class="form-group mt-3">
                         <label>Description</label>
-                        <textarea name="" id="" class="form-control" cols="30" rows="3"></textarea>
+                        <textarea formControlName="description" class="form-control" cols="30" rows="3"
+                            required></textarea>
+                        <span class="text-danger"
+                            *ngIf="NoticeForm.get('description').invalid && NoticeForm.get('description').touched ">
+                            Title should be atleast 50 characters
+                        </span>
                     </div>
 
                     <div class="form-group mt-3">
-                        <select class="form-select">
+                        <select class="form-select" formControlName="privacyStatus" required>
                             <option>Public</option>
                             <option>Only Faculty</option>
                         </select>
                     </div>
 
-
-
-                </form>
+                </div>
             </div>
+
+
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <label for="">
+                    <input type="file" formControlName="imgUrl" (change)="PreviewImage($event)">
+                </label>
+                <div class="image-placeholder p-lg-3 ms-lg-5 mt-3 w-100">
+                    <img src="{{imgLink}}" class="w-100" alt="placeholder">
+                </div>
+                <div class="form-group mt-3 d-flex flex-wrap justify-content-end">
+                    <!-- <app-button bg="bg-secondary px-3 py-1"  >Post</app-button> -->
+                    <button class="btn btn-primary" [disabled]="!NoticeForm.valid">
+                        Add
+                    </button>
+                </div>
+            </div>
+
+
         </div>
-
-
-        <div class="col-lg-6 mt-4 mt-lg-0">
-            <label for="">
-                <input type="file"   >
-            </label>
-
-            <div class="image-placeholder p-lg-3 ms-lg-5 mt-3 w-100">
-                <img src="/assets/images/image-placeholder.png" class="w-100" alt="">
-            </div>
-            <div class="form-group mt-3 d-flex flex-wrap justify-content-end">
-                <app-button bg="bg-secondary px-3 py-1">Post</app-button>
-            </div>
-        </div>
-
-
-    </div>
+    </form>
 </div>

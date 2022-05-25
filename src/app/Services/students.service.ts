@@ -1,12 +1,17 @@
 import { StudentFilterService } from './../Modules/shared/student-filter/student-filter.service';
 import { Injectable } from '@angular/core';
+import { student } from '../models/student.model';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsService {
 
-  constructor(private studentFilterService: StudentFilterService) { }
+  constructor(
+    private studentFilterService: StudentFilterService,
+    private location : Location
+    ) { }
 
   students = [
     {
@@ -15,7 +20,7 @@ export class StudentsService {
       CNIC: '42201-12345678-9', FeeStatus: false
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4rd', Section: 'Blue', ClassTeacher: 'Sir Subhan',
+      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
       Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9', FeeStatus: true
     },
@@ -30,7 +35,7 @@ export class StudentsService {
       CNIC: '42201-12345678-9', FeeStatus: false
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4rd', Section: 'Blue', ClassTeacher: 'Sir Subhan',
+      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
       Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9', FeeStatus: true
     },
@@ -45,7 +50,7 @@ export class StudentsService {
       CNIC: '42201-12345678-9', FeeStatus: false
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4rd', Section: 'Blue', ClassTeacher: 'Sir Subhan',
+      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
       Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9', FeeStatus: true
     },
@@ -60,7 +65,7 @@ export class StudentsService {
       CNIC: '42201-12345678-9', FeeStatus: false
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4rd', Section: 'Blue', ClassTeacher: 'Sir Subhan',
+      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
       Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9', FeeStatus: true
     },
@@ -75,7 +80,7 @@ export class StudentsService {
       CNIC: '42201-12345678-9', FeeStatus: false
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4rd', Section: 'Blue', ClassTeacher: 'Sir Subhan',
+      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
       Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9', FeeStatus: true
     },
@@ -100,15 +105,43 @@ export class StudentsService {
     )
   }
 
-  filter(){
+  filter() {
     let cretaria = this.studentFilterService.filterCriteria;
     // return this.students.filter(
     //   x =>
     //   x.Class.toUpperCase().includes(cretaria.class.toUpperCase())
     // )
-    console.log(cretaria);
   }
 
+  updatedStudent: student;
+  update(data: any) {
+    
+    let index = this.students.findIndex((student) => {
+      return student.RollNo == data.RollNo;
+    })
+
+    this.updatedStudent = {
+      RollNo: 12,
+      Name: data.Name,
+      FatherName: data.FatherName,
+      Class: data.Class,
+      Section: data.Section,
+      ClassTeacher: data.ClassTeacher,
+      Phone: data.Phone,
+      Email: data.Email,
+      Address: data.Address,
+      DateOfBirth: data.DateOfBirth,
+      CNIC: data.CNIC,
+      FeeStatus: data.FeeStatus
+
+    }
+
+    this.students.splice(index, 1, this.updatedStudent)
+
+
+    this.location.back();
+
+  }
 
 
 }

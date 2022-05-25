@@ -1,1 +1,89 @@
-<p>assignment-submissions works!</p>
+<div class="d-flex justify-content-between flex-wrap align-content-end">
+
+    <h3>Submissions</h3>
+
+    <div class="me-3">
+        <img src="/assets/images/icons/filter-icon.png" width="22" alt="">
+        <span>Filter</span>
+    </div>
+
+
+</div>
+
+<div class="filter bg-white border rounded shadow-sm pop-up p-3">
+    <div class="form-group mt-3">
+        <label>Class</label>
+        <select name="" id="" class="form-select">
+            <option value="">1st</option>
+            <option value="">2nd</option>
+            <option value="">3rd</option>
+            <option value="">4th</option>
+        </select>
+    </div>
+    <div class="form-group mt-3">
+        <label>Section</label>
+        <select name="" id="" class="form-select">
+            <option value="">Green</option>
+            <option value="">Red</option>
+            <option value="">Blue</option>
+            <option value="">Yellow</option>
+        </select>
+    </div>
+    <div class="form-group mt-3">
+        <label>Class Teacher</label>
+        <select name="" id="" class="form-select">
+            <option value="">Sir Subhan</option>
+            <option value="">Sir Maaz</option>
+            <option value="">Sir Asad</option>
+            <option value="">Sir Nasir</option>
+        </select>
+    </div>
+    <div class="form-group mt-3">
+        <label>Submit Status</label>
+        <select name="" id="" class="form-select">
+            <option value="">Submitted</option>
+            <option value="">Not Submitted</option>
+        </select>
+    </div>
+    <div class="form-group mt-3 d-flex justify-content-end">
+        <app-button bg="bg-secondary px-3 py-2">Apply Filter</app-button>
+    </div>
+</div>
+
+
+<div class="mt-4 border p-5 rounded pop-up shadow-sm assignments-submissions">
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Father's Name</th>
+                <th>Class</th>
+                <th>Section</th>
+                <th>Submited Date</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td>{{item.RollNo}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.FatherName}}</td>
+                <td>{{item.Class}}</td>
+                <td>{{item.Section}}</td>
+                <td>{{item.Section}}</td>
+                <td class="d-flex justify-content-center">
+                    <app-button bg="bg-secondary px-3 py-1">Download</app-button>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+</div>

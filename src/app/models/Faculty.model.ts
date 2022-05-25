@@ -1,4 +1,3 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 export class Faculty{
     constructor(
         public Id : number,

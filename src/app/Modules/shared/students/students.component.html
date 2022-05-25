@@ -65,7 +65,13 @@
                 </div>
                 <div class="w-100 d-flex flex-wrap align-content-center ">
                     <div class="w-100 ps-2 pt-3">
-                        <h5>{{selectedStudent.Name}}</h5>
+                        <div class="d-flex justify-content-between">
+                            <h5>{{selectedStudent.Name}}</h5>
+                            <a [routerLink]="['/studentEidt']"
+                                [queryParams]="{'rollNo' : selectedStudent.RollNo}">
+                                <app-button bg="bg-secondary px-2">Edit</app-button>
+                            </a>
+                        </div>
                         <hr class="my-0 ">
                         <p>{{selectedStudent.FatherName}}</p>
                     </div>
@@ -80,7 +86,7 @@
                     <h5>
                         Academic Info
                     </h5>
-                    <app-button bg="bg-secondary px-2">Edit</app-button>
+
                 </div>
                 <hr class="my-0">
 
@@ -101,7 +107,23 @@
                             <span>Class</span>
                         </div>
                         <div class="col-8">
-                            <span>{{selectedStudent.Class}} {{selectedStudent.Section}}</span>
+                            <span>{{selectedStudent.Class}}  </span>
+                        </div>
+                    </div>
+                    <div class="row mt-2 ">
+                        <div class="col-4">
+                            <span>Section</span>
+                        </div>
+                        <div class="col-8">
+                            <span> {{selectedStudent.Section}}</span>
+                        </div>
+                    </div>
+                    <div class="row mt-2 ">
+                        <div class="col-4">
+                            <span>Fee Status</span>
+                        </div>
+                        <div class="col-8">
+                            <span> {{selectedStudent.FeeStatus ? 'Paid' : 'Unpaid'}}</span>
                         </div>
                     </div>
 
@@ -129,7 +151,7 @@
                     <h5>
                         Personal Info
                     </h5>
-                    <app-button bg="bg-secondary px-2">Edit</app-button>
+
                 </div>
                 <hr class="my-0">
 

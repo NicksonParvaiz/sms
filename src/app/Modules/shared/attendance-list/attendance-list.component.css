@@ -1,0 +1,15 @@
+th {
+    font-weight: 500;
+}
+
+thead  {
+    position: sticky;
+    z-index: 3;
+    top: -20px;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+}
+.attendance-list{
+    height: 70%;
+    overflow-y: auto;
+}

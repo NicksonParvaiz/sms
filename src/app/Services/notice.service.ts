@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Notice } from '../models/Notice.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoticeService {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
 
-  noticeList = [
+  noticeList: Notice[] = [
     {
       Id: 1,
       Title: 'Sport Week',
       Description: 'Annual sports week is going to be held on 23rd may to 30th may 2022, do particepate and enjoy',
       PrivacyStatus: 'All',
       ImgUrl: '/assets/images/sportsweek.png',
-      PostedDate: '20th May 2022'
+      PostedDate: 'Tue May 24 2022 16:34'
     },
     {
       Id: 2,
@@ -23,7 +25,7 @@ export class NoticeService {
       Description: 'Summer Champ is going to be held on 23rd may to 10th june 2022, do particepate and enjoy',
       PrivacyStatus: 'All',
       ImgUrl: '/assets/images/Summer Camp.png',
-      PostedDate: '4th june 2022'
+      PostedDate: 'Tue May 24 2022 16:34'
     },
     {
       Id: 3,
@@ -31,12 +33,25 @@ export class NoticeService {
       Description: 'Annual Result Day is going to be held on 25th July 2022.',
       PrivacyStatus: 'All',
       ImgUrl: '/assets/images/annual result day.jpg',
-      PostedDate: '1st July 2022'
+      PostedDate: 'Tue May 24 2022 16:34'
     },
   ]
 
   get() {
     return this.noticeList;
+  }
+  add(data: any) {
+
+    let newNotice: Notice = {
+      Id: this.noticeList[this.noticeList.length - 1].Id + 1,
+      Title: data.title,
+      Description: data.description,
+      PrivacyStatus: data.privacyStatus,
+      ImgUrl: '/assets/images/' + data.imgUrl.substring(12, data.imgUrl.length),
+      PostedDate: new Date(Date.now()).toString().substring(0, 21)
+    }
+    this.router.navigateByUrl('noticeboard');
+    this.noticeList.push(newNotice)
   }
 
 }

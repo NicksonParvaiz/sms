@@ -52,7 +52,6 @@ export class StudentsComponent implements OnInit, DoCheck {
 
   showDetail(selectedStudent: student) {
     this.selectedStudent = selectedStudent;
-    console.log(selectedStudent);
     this.detailShow = true;
   }
   closeDetails() {

@@ -9,7 +9,6 @@ import { NoticeboardComponent } from './noticeboard/noticeboard.component';
 import { NotificationComponent } from './notification/notification.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { StudentProgressComponent } from './student-progress/student-progress.component';
-import { AttendanceComponent } from './attendance/attendance.component';
 import { EmailSendingComponent } from './email-sending/email-sending.component';
 import { DateFilterComponent } from './date-filter/date-filter.component';
 import { LineGraphComponent } from './line-graph/line-graph.component';
@@ -23,6 +22,9 @@ import { FilterButtonComponent } from './filter-button/filter-button.component';
 import { StudentFilterComponent } from './student-filter/student-filter.component';
 import { NotificationPanelComponent } from './notification-panel/notification-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BackComponent } from './back/back.component';
+import { NoticeListComponent } from './notice-list/notice-list.component';
+import { AttendanceListComponent } from './attendance-list/attendance-list.component';
 
 
 @NgModule({
@@ -33,7 +35,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NotificationComponent,
     AssignmentsComponent,
     StudentProgressComponent,
-    AttendanceComponent,
     EmailSendingComponent,
     DateFilterComponent,
     LineGraphComponent,
@@ -45,7 +46,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardCardComponent,
     FilterButtonComponent,
     StudentFilterComponent,
-    NotificationPanelComponent
+    NotificationPanelComponent,
+    BackComponent,
+    NoticeListComponent,
+    AttendanceListComponent
   ],
   imports: [
     CommonModule,
@@ -61,7 +65,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NotificationComponent,
     AssignmentsComponent,
     StudentProgressComponent,
-    AttendanceComponent,
     EmailSendingComponent,
     DateFilterComponent,
     LineGraphComponent,
@@ -73,7 +76,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardCardComponent,
     FilterButtonComponent,
     StudentFilterComponent,
-    NotificationPanelComponent
+    NotificationPanelComponent,
+    BackComponent,
+    NoticeListComponent,
+    AttendanceListComponent
 
   ]
 })

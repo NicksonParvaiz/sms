@@ -1,3 +1,4 @@
+import { FacultyModule } from './Modules/faculty/faculty.module';
 import { AdminModule } from './Modules/admin/admin.module';
 import { AuthModule } from './Modules/auth/auth.module';
 import { NgModule } from '@angular/core';
@@ -23,6 +24,8 @@ import { MainComponent } from './main-template/main/main.component';
     SharedModule,
     FontAwesomeModule,
     AdminModule,
+    FacultyModule,
+    FacultyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

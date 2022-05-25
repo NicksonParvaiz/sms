@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminMainComponent } from './admin-main/admin-main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountsPanelComponent } from './accounts-panel/accounts-panel.component';
+import { NoticeboardPanelComponent } from './noticeboard-panel/noticeboard-panel.component';
+import { StudentEditComponent } from './student-edit/student-edit.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { AccountsPanelComponent } from './accounts-panel/accounts-panel.componen
     AdminDashboardComponent,
     AdminMainComponent,
     AccountsPanelComponent,
+    NoticeboardPanelComponent,
+    StudentEditComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +32,7 @@ import { AccountsPanelComponent } from './accounts-panel/accounts-panel.componen
     SharedModule,
     FontAwesomeModule,
     FormsModule,
+    ReactiveFormsModule
 
   ],
   exports:[

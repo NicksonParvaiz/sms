@@ -1,0 +1,37 @@
+<div class="border pop-up shadow-sm p-3 attendance-list " >
+
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" name="" id="">
+                    All
+                </th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Father's Name</th>
+                <th>Class</th>
+                <th>View Profile</th> 
+            </tr>
+        </thead>
+
+        <tbody>
+            
+            <tr *ngFor="let item of data">
+                <td style="width:60px; height: 55px;" >
+                    <div class="w-100 h-100 d-flex flex-wrap align-content-center">
+                        <input type="checkbox">
+                    </div>
+                </td>
+                <td>{{item.RollNo}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.FatherName}}</td>
+                <td>{{item.Class}}</td>
+                <td>
+                    <app-button bg="bg-secondary px-3 py-2">more</app-button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

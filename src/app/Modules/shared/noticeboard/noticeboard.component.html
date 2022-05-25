@@ -1,24 +1,28 @@
-<div class="row w-75 ms-lg-1 ms-5 ps-1 d-flex justify-content-center">
-    <div class="">
+<div class="row  ms-lg-1 ms-5  ps-1 d-flex justify-content-center">
+    <div class="col-lg-8">
         <div class="d-flex justify-content-between">
             <h1>Notice Board</h1>
-            <a [routerLink]="['/add-notice']" routerLinkActive="router-link-active">
+            <a [routerLink]="['add']" routerLinkActive="router-link-active">
                 <app-button bg="bg-secondary px-3 py-1 mt-lg-3">Add</app-button>
             </a>
         </div>
         <div class="noticeboard border pop-up rounded shadow-sm mt-3 p-3  ">
 
-            <div class="mt-4 shadow p-3" *ngFor="let item of data">
-                <p>{{item.Description}} ...
-                    <span class="text-primary"> More </span>
-                </p>
-                <img src="{{item.ImgUrl}}" class="w-50" alt=""><br>
-                <div class="d-flex mt-3 ">
-                    <span class="text-primary ">{{item.PostedDate}}</span>
-                    <div class="ms-2">
-                        <img src="/assets/images/icons/public icon.jpg" alt="">
+            <div  *ngFor="let item of data">
+                <div class="mt-4 shadow p-3">
+
+                    <h4>{{item.Title}}</h4>
+                    <p>{{item.Description}} ...
+                        <span class="text-primary"> More </span>
+                    </p>
+                    <img src="{{item.ImgUrl}}" class="w-100" alt=""><br>
+                    <div class="d-flex mt-3 ">
+                        <span class="text-primary ">{{item.PostedDate}}</span>
+                        <div class="ms-2">
+                            <img src="/assets/images/icons/public icon.jpg" alt="">
+                        </div>
+                        <p class="ms-1">{{item.PrivacyStatus}}</p>
                     </div>
-                    <p class="ms-1">{{item.PrivacyStatus}}</p>
                 </div>
                 <hr>
             </div>
