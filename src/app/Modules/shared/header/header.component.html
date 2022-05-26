@@ -9,11 +9,14 @@
     <div class="right-side">
       <a [routerLink]="['/notification']" routerLinkActive="router-link-active">
         <fa-icon [icon]="notificationIcon"></fa-icon>
-        <span>2</span>
+        <sup>2</sup>
       </a>
-      <span class="me-2 ms-4" id="dropdownMenuButton1" data-bs-toggle="dropdown">Nickson</span>
+      <span class="me-2 ms-4" id="dropdownMenuButton1" data-bs-toggle="dropdown">{{loginUser}}</span>
       <fa-icon [icon]="dropDownIcon"></fa-icon>
+
+      
     </div>
+    <button class="btn btn-primary" (click)="logout()">logout</button>
 
   </div>
 </div>

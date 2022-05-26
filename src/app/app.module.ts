@@ -1,3 +1,4 @@
+import { StudentModule } from './Modules/student/student.module';
 import { FacultyModule } from './Modules/faculty/faculty.module';
 import { AdminModule } from './Modules/admin/admin.module';
 import { AuthModule } from './Modules/auth/auth.module';
@@ -25,7 +26,8 @@ import { MainComponent } from './main-template/main/main.component';
     FontAwesomeModule,
     AdminModule,
     FacultyModule,
-    FacultyModule
+    FacultyModule,
+    StudentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NoticeService } from './../../../Services/notice.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, DoCheck } from '@angular/core';
@@ -11,7 +12,7 @@ import { faArrowLeft, faImage } from '@fortawesome/free-solid-svg-icons';
 })
 export class NoticeFormComponent implements OnInit {
 
-  constructor(private NoticeService:NoticeService) { }
+  constructor(private NoticeService:NoticeService , private router : Router) { }
   backIcon = faArrowLeft;
   imagePlaceHolder = faImage;
 
@@ -40,8 +41,8 @@ export class NoticeFormComponent implements OnInit {
 
 
   AddNotice() {
-    console.log(this.NoticeForm);
     this.NoticeService.add(this.NoticeForm.value)
+    this.router.navigateByUrl('/admin/noticeboard');
   }
 
 

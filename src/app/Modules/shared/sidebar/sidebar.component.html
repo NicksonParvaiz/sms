@@ -1,34 +1,111 @@
 <div class="sidebar" [ngClass]="{'sidebar-expand': isExpand , 'sidebar-collapse': !isExpand }">
-    <ul class="list-group">
-        <a [routerLink]="['/']" routerLinkActive="router-link-active"  >
+
+    <!-- ===================== Admin =====================  -->
+    <ul class="list-group" *ngIf="loggedInUserRole === 'admin'">
+        <a [routerLink]="['dashboard']" routerLinkActive="router-link-active">
             <li class="list-group-item py-3 d-flex justify-content-between">
                 <span class="ms-2">Dashboard</span>
                 <img src="/assets/images/icons/dashboard.jpg" class="sidebar-icon " alt="">
             </li>
         </a>
-        <a [routerLink]="['/student']" routerLinkActive="router-link-active"  >
+        <a [routerLink]="['/admin/student']" routerLinkActive="router-link-active">
             <li class="list-group-item py-3 d-flex justify-content-between">
                 <span class="ms-2">Students</span>
                 <img src="/assets/images/icons/student-icon.jpg" class="sidebar-icon " alt="">
             </li>
         </a>
-        <a [routerLink]="['/faculty']" routerLinkActive="router-link-active"  >
+        <a [routerLink]="['/admin/faculty']" routerLinkActive="router-link-active">
             <li class="list-group-item py-3 d-flex justify-content-between">
                 <span class="ms-2">Faculty</span>
                 <img src="/assets/images/icons/teaching-icon.png" class="sidebar-icon " alt="">
             </li>
         </a>
-        <a [routerLink]="['/noticeboard']" routerLinkActive="router-link-active"  >
+        <a [routerLink]="['/admin/noticeboard']" routerLinkActive="router-link-active">
             <li class="list-group-item py-3 d-flex justify-content-between">
                 <span class="ms-2">Noticeboard</span>
                 <img src="/assets/images/icons/notice-board.jpg" class="sidebar-icon " alt="">
             </li>
         </a>
-        <a [routerLink]="['/accounts']" routerLinkActive="router-link-active"  >
+        <a [routerLink]="['/admin/accounts']" routerLinkActive="router-link-active">
             <li class="list-group-item py-3 d-flex justify-content-between">
                 <span class="ms-2">Accounts</span>
                 <img src="/assets/images/icons/dollar.png" class="sidebar-icon " alt="">
             </li>
         </a>
     </ul>
+
+    <!-- ===================== Faculty =====================  -->
+    <ul class="list-group" *ngIf="loggedInUserRole === 'faculty'">
+        <a [routerLink]="['dashboard']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Dashboard</span>
+                <img src="/assets/images/icons/dashboard.jpg" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/faculty/student']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Students</span>
+                <img src="/assets/images/icons/student-icon.jpg" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/faculty/attendance']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">attendance</span>
+                <img src="/assets/images/icons/teaching-icon.png" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/faculty/noticeboard']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Noticeboard</span>
+                <img src="/assets/images/icons/notice-board.jpg" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/faculty/assignments']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Assignments</span>
+                <img src="/assets/images/icons/dollar.png" class="sidebar-icon " alt="">
+            </li>
+        </a>
+    </ul>
+
+    <!-- ===================== Student =====================  -->
+    <ul class="list-group" *ngIf="loggedInUserRole === 'student'">
+        <a [routerLink]="['dashboard']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Dashboard</span>
+                <img src="/assets/images/icons/dashboard.jpg" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/student/progress']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Students</span>
+                <img src="/assets/images/icons/student-icon.jpg" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/student/attendance']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">attendance</span>
+                <img src="/assets/images/icons/teaching-icon.png" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/student/noticeboard']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Noticeboard</span>
+                <img src="/assets/images/icons/notice-board.jpg" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/student/assignments']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Assignments</span>
+                <img src="/assets/images/icons/dollar.png" class="sidebar-icon " alt="">
+            </li>
+        </a>
+        <a [routerLink]="['/student/Profile']" routerLinkActive="router-link-active">
+            <li class="list-group-item py-3 d-flex justify-content-between">
+                <span class="ms-2">Profile</span>
+                <img src="/assets/images/icons/dollar.png" class="sidebar-icon " alt="">
+            </li>
+        </a>
+    </ul>
+
 </div>

@@ -1,0 +1,6 @@
+.filter{
+    position: absolute;
+    width: 320px;
+    background-color: #fff;
+    z-index: 1;
+}

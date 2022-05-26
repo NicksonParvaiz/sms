@@ -1,0 +1,24 @@
+th {
+    font-weight: 500;
+}
+
+thead  {
+    position: sticky;
+    z-index: 3;
+    top: -20px;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+}
+.attendance-info{
+    height: 80vh;
+    overflow-y: auto;
+}
+.filter{
+    width: 300px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+}
+.attendance-detail{
+    height: 80vh;
+}

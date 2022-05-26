@@ -1,0 +1,7 @@
+.detail{
+    height: 76vh;
+}
+.assignment-detail-content{
+    height: 46vh;
+    overflow-y: auto;
+}

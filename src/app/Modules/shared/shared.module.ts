@@ -8,7 +8,6 @@ import { StudentsComponent } from './students/students.component';
 import { NoticeboardComponent } from './noticeboard/noticeboard.component';
 import { NotificationComponent } from './notification/notification.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
-import { StudentProgressComponent } from './student-progress/student-progress.component';
 import { EmailSendingComponent } from './email-sending/email-sending.component';
 import { DateFilterComponent } from './date-filter/date-filter.component';
 import { LineGraphComponent } from './line-graph/line-graph.component';
@@ -25,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BackComponent } from './back/back.component';
 import { NoticeListComponent } from './notice-list/notice-list.component';
 import { AttendanceListComponent } from './attendance-list/attendance-list.component';
+import { StudentProgressDetailComponent } from './student-progress-detail/student-progress-detail.component';
 
 
 @NgModule({
@@ -34,7 +34,6 @@ import { AttendanceListComponent } from './attendance-list/attendance-list.compo
     NoticeboardComponent,
     NotificationComponent,
     AssignmentsComponent,
-    StudentProgressComponent,
     EmailSendingComponent,
     DateFilterComponent,
     LineGraphComponent,
@@ -49,7 +48,8 @@ import { AttendanceListComponent } from './attendance-list/attendance-list.compo
     NotificationPanelComponent,
     BackComponent,
     NoticeListComponent,
-    AttendanceListComponent
+    AttendanceListComponent,
+    StudentProgressDetailComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +64,6 @@ import { AttendanceListComponent } from './attendance-list/attendance-list.compo
     NoticeboardComponent,
     NotificationComponent,
     AssignmentsComponent,
-    StudentProgressComponent,
     EmailSendingComponent,
     DateFilterComponent,
     LineGraphComponent,
@@ -79,7 +78,8 @@ import { AttendanceListComponent } from './attendance-list/attendance-list.compo
     NotificationPanelComponent,
     BackComponent,
     NoticeListComponent,
-    AttendanceListComponent
+    AttendanceListComponent,
+    StudentProgressDetailComponent
 
   ]
 })

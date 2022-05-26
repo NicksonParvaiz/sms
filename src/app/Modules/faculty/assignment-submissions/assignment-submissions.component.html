@@ -2,7 +2,7 @@
 
     <h3>Submissions</h3>
 
-    <div class="me-3">
+    <div class="me-3" (click)="toggleFilter()">
         <img src="/assets/images/icons/filter-icon.png" width="22" alt="">
         <span>Filter</span>
     </div>
@@ -10,7 +10,7 @@
 
 </div>
 
-<div class="filter bg-white border rounded shadow-sm pop-up p-3">
+<div class="filter bg-white border rounded shadow-sm pop-up p-3" *ngIf="Showfilter" >
     <div class="form-group mt-3">
         <label>Class</label>
         <select name="" id="" class="form-select">

@@ -1,0 +1,94 @@
+<div class="d-flex justify-content-between">
+    <h3 class="mb-3">Student Progress</h3>
+    <span (click)="filterToggle()" > <img src="/assets/images/icons/filter-icon.png" width="20" alt="">  Filter</span>
+</div>
+<div class="row">
+      <!-- =================== Filter ===================  -->
+      <div class="d-flex justify-content-end" *ngIf="ShowFilter">
+
+        <div class="border p-3 rounded shadow-sm filter pop-up ">
+            <form>
+                <div class="form-group ">
+                    <label>From</label>
+                    <input type="date" class="form-control" name="" id="">
+                </div>
+                <div class="form-group mt-3">
+                    <label>To</label>
+                    <input type="date" class="form-control" name="" id="">
+                </div>
+
+                <div class="form-group mt-3 d-flex justify-content-end">
+                    <button class="btn btn-primary">Filter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- =================== Filter ===================  -->
+
+</div>
+<div class="row">
+    
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-6 ">
+                <div class="card pop-up p-3 shadow-sm">
+                    <div class="d-flex justify-content-between">
+                        <h6>GPA</h6>
+                        <!-- <span>May</span> -->
+                    </div>
+                    <div>
+                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div class="card pop-up p-3 shadow-sm">
+                    <div class="d-flex justify-content-between">
+                        <h6>CGPA</h6>
+                        <!-- <span>May</span> -->
+                    </div>
+                    <div>
+                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+      
+
+        <div class="row">
+            <div class="col-6 ">
+                <div class="card pop-up p-3 shadow-sm">
+                    <div class="d-flex justify-content-between">
+                        <h6>GPA</h6>
+                        <!-- <span>May</span> -->
+                    </div>
+                    <div>
+                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div class="card pop-up p-3 shadow-sm">
+                    <div class="d-flex justify-content-between">
+                        <h6>CGPA</h6>
+                        <!-- <span>May</span> -->
+                    </div>
+                    <div>
+                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="row mt-4 pt-2  px-3">
+    <div class="border shadow-sm p-3 pop-up rounded">
+        <img src="/assets/images/graph.jpg" class="w-100" alt="">
+    </div>
+</div>

@@ -1,1 +1,154 @@
-<p>profile works!</p>
+<div class="student-detail border shadow-sm p-3 pop-up mt-4 rounded">
+    <div class="d-flex justify-content-end">
+        <!-- <div class="p-2 close border border-bottom-0" (click)="closeDetails()">
+            <fa-icon [icon]="closeIcon"></fa-icon>
+        </div> -->
+    </div>
+    <div class="header p-2 d-flex">
+        <div>
+            <img src="/assets/images/student.jpg" width="100" class="rounded-circle" alt="">
+        </div>
+        <div class="w-100 d-flex flex-wrap align-content-center ">
+            <div class="w-100 ps-2 pt-3">
+                <div class="d-flex justify-content-between">
+                    <h5>Name</h5>
+                    <a [routerLink]="['/studentEidt']" [queryParams]="{'rollNo':1}">
+                        <!-- <app-button bg="bg-secondary px-2">Edit</app-button> -->
+                    </a>
+                </div>
+                <hr class="my-0 ">
+                <p>FatherName</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Academic ====================  -->
+
+    <div class="academic-info mt-4 px-3 ">
+
+        <div class="d-flex justify-content-between pe-2">
+            <h5>
+                Academic Info
+            </h5>
+
+        </div>
+        <hr class="my-0">
+
+        <div class="detail  pt-2">
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    <span>Roll no.</span>
+                </div>
+                <div class="col-8">
+                    <span>RollNo</span>
+                </div>
+            </div>
+
+            <div class="row mt-2 ">
+                <div class="col-4">
+                    <span>Class</span>
+                </div>
+                <div class="col-8">
+                    <span>Class </span>
+                </div>
+            </div>
+            <div class="row mt-2 ">
+                <div class="col-4">
+                    <span>Section</span>
+                </div>
+                <div class="col-8">
+                    <span> Section</span>
+                </div>
+            </div>
+            <div class="row mt-2 ">
+                <div class="col-4">
+                    <span>Fee Status</span>
+                </div>
+                <div class="col-8">
+                    <span> FeeStatus 'Paid' : 'Unpaid' </span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    <span>Class Teacher</span>
+                </div>
+                <div class="col-8">
+                    <span>ClassTeacher</span>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="personal-info mt-5 px-3">
+
+        <div class="d-flex justify-content-between pe-2">
+            <h5>
+                Personal Info
+            </h5>
+
+        </div>
+        <hr class="my-0">
+
+        <div class="detail  pt-2">
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    <span>Phone</span>
+                </div>
+                <div class="col-8">
+                    <span>Phone</span>
+                </div>
+            </div>
+
+            <div class="row mt-2 ">
+                <div class="col-4">
+                    <span>Email</span>
+                </div>
+                <div class="col-8">
+                    <span>Email</span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    <span>Address</span>
+                </div>
+                <div class="col-8">
+                    <span>Address</span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    <span>Date of Birth</span>
+                </div>
+                <div class="col-8">
+                    <span>DateOfBirth</span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    <span>CNIC</span>
+                </div>
+                <div class="col-8">
+                    <span>CNIC</span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>

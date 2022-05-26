@@ -9,10 +9,17 @@ import { student } from 'src/app/models/student.model';
 })
 export class AssignmentSubmissionsComponent implements OnInit {
 
-  constructor(private StudentsService:StudentsService) { }
-  data : student[];
+  constructor(private StudentsService: StudentsService) { }
+  data: student[];
+
+
+  Showfilter = false;
   ngOnInit(): void {
     this.data = this.StudentsService.get();
   }
 
+
+  toggleFilter() {
+    this.Showfilter = !this.Showfilter;
+  }
 }

@@ -1,3 +1,12 @@
+import { ForgotPasswordComponent } from './Modules/auth/forgot-password/forgot-password.component';
+import { LoginComponent } from './Modules/auth/login/login.component';
+import { AuthguardGuard } from './authguard.guard';
+import { StudentProgressComponent } from './Modules/student/student-progress/student-progress.component';
+import { StudentNoticeboardComponent } from './Modules/student/student-noticeboard/student-noticeboard.component';
+import { StudentAttendanceComponent } from './Modules/student/student-attendance/student-attendance.component';
+import { StudentAssignmentComponent } from './Modules/student/student-assignment/student-assignment.component';
+import { StudentDashboardComponent } from './Modules/student/student-dashboard/student-dashboard.component';
+import { StudentMainComponent } from './Modules/student/student-main/student-main.component';
 import { AssignmentSubmissionsComponent } from './Modules/faculty/assignment-submissions/assignment-submissions.component';
 import { FacultyAssignmentComponent } from './Modules/faculty/faculty-assignment/faculty-assignment.component';
 import { AssignmentsComponent } from './Modules/shared/assignments/assignments.component';
@@ -17,12 +26,14 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main-template/main/main.component';
 import { StudentsComponent } from './Modules/shared/students/students.component';
+import { ProfileComponent } from './Modules/student/profile/profile.component';
 
 const routes: Routes = [
 
   {
-    path: 'admin', component: MainComponent, children: [
+    path: 'admin', canActivate: [AuthguardGuard], canActivateChild: [AuthguardGuard], component: MainComponent, children: [
       { path: '', component: AdminDashboardComponent },
+      { path: 'dashboard', component: AdminDashboardComponent },
       { path: 'student', component: StudentsComponent },
       { path: 'studentEidt', component: StudentEditComponent },
       { path: 'faculty', component: FacultyComponent },
@@ -36,19 +47,37 @@ const routes: Routes = [
       { path: 'notification', component: NotificationPanelComponent },
       { path: 'send-email', component: EmailSendingComponent },
       { path: 'accounts', component: AccountsPanelComponent },
+      { path: 'student-progress', component: StudentProgressComponent },
     ]
   },
   {
-    path: '', component: MainComponent, children: [
-      { path: 'add-assignment', component : AssignmentFormComponent },
-      { path: '', component : AssignmentSubmissionsComponent },
-      { path: 'assignments', component : FacultyAssignmentComponent },
-      { path: 'attendance', component : AttendanceComponent },
-      { path: 'dashboard', component : FacultyDashboardComponent },
-      { path: 'assignment-form', component : AssignmentFormComponent }
+    path: 'faculty', component: MainComponent, children: [
+      { path: '', component: FacultyDashboardComponent },
+      { path: 'dashboard', component: FacultyDashboardComponent },
+      { path: 'student', component: StudentsComponent },
+      { path: 'attendance', component: AttendanceComponent },
+      { path: 'noticeboard', component: NoticeboardComponent },
+      { path: 'assignments', component: FacultyAssignmentComponent },
+      { path: 'add-assignment', component: AssignmentFormComponent },
+      { path: 'assignment-submission', component: AssignmentSubmissionsComponent },
     ]
-  }
+  },
 
+  {
+    path: 'student', component: MainComponent, children: [
+      { path: '', component: StudentDashboardComponent },
+      { path: 'dashboard', component: StudentDashboardComponent },
+      { path: 'progress', component: StudentProgressComponent },
+      { path: 'attendance', component: StudentAttendanceComponent },
+      { path: 'noticeboard', component: StudentNoticeboardComponent },
+      { path: 'assignments', component: StudentAssignmentComponent },
+      { path: 'Profile', component: ProfileComponent },
+
+    ]
+  },
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent }
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/Services/auth.service';
 import { NoticeService } from './../../../Services/notice.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticeboardComponent implements OnInit {
 
-  constructor(private noticeServices: NoticeService) { }
+  constructor(private noticeServices: NoticeService, private auth: AuthService) { }
+
+  loggedInuserRole: string;
+
 
   data = [];
   ngOnInit(): void {
-    this.data = this.noticeServices.get(); 
+    this.data = this.noticeServices.get();
+    this.loggedInuserRole = this.auth.loginUser.role;
   }
 
 }

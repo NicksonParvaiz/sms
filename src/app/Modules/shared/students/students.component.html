@@ -67,7 +67,7 @@
                     <div class="w-100 ps-2 pt-3">
                         <div class="d-flex justify-content-between">
                             <h5>{{selectedStudent.Name}}</h5>
-                            <a [routerLink]="['/studentEidt']"
+                            <a [routerLink]="['/admin/studentEidt']"
                                 [queryParams]="{'rollNo' : selectedStudent.RollNo}">
                                 <app-button bg="bg-secondary px-2">Edit</app-button>
                             </a>
@@ -212,7 +212,9 @@
 
 
             <div class="d-flex justify-content-end mt-2">
-                <app-button bg="bg-secondary px-2 py-1 me-3">View Progress</app-button>
+                <a [routerLink]="['/admin/student-progress']" routerLinkActive="router-link-active" >
+                    <app-button bg="bg-secondary px-2 py-1 me-3">View Progress</app-button>
+                </a>
             </div>
 
         </div>
