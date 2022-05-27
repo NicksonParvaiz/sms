@@ -1,15 +1,15 @@
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-6" [ngClass]="{'col-lg-6': IsShowDetail , 'col-lg-12': !IsShowDetail}">
         <h4>Assignments</h4>
         <div class="border p-2 rounded pop-up shadow-sm mt-4">
-            <app-assignments></app-assignments>
+            <app-assignments ></app-assignments>
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6" *ngIf="IsShowDetail" >
         <h4>Details</h4>
         <div class="border p-2 rounded pop-up shadow-sm mt-4 p-4">
-           <app-faculty-assignment-detail></app-faculty-assignment-detail>
+           <app-faculty-assignment-detail (showDetail)="ShowDetail($event)" ></app-faculty-assignment-detail>
         </div>
     </div>
 </div>

@@ -1,48 +1,25 @@
 <div class="row ms-5 ms-lg-0 ps-3 ps-lg-0 ">
-    <div class="col-lg-6">
+    <div class="" [ngClass]="{'col-lg-6': selectedNotification, 'col-lg-12': !selectedNotification}">
         <h1 class="">Notifications</h1>
+
         <div class="border rounded pop-up p-3 shadow-sm">
             <div class="list pe-3">
-                <div class="item pop-up p-3 shadow-sm border rounded bg-light mt-2">
-                    <h6>Sports Week</h6>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, et?</p>
-                    <app-button bg="bg-secondary px-2 py-1" class="d-flex justify-content-end">More</app-button>
+                <div class="item pop-up p-3 shadow-sm border rounded bg-light mt-2" *ngFor="let item of data">
+                    <h6>{{item.Title}}</h6>
+                    <p class="mb-0">
+                        {{item.AbsentUsername}}
+                        {{item.Description}}
+                    </p>
+                    <app-button bg="bg-secondary px-2 py-1" class="d-flex justify-content-end"
+                        (click)="getDetail(item)">More</app-button>
                 </div>
-                
-                <div class="item pop-up p-3 shadow-sm border rounded bg-light mt-2">
-                    <h6>Sports Week</h6>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, et?</p>
-                    <app-button bg="bg-secondary px-2 py-1" class="d-flex justify-content-end">More</app-button>
-                </div>
-                
-                <div class="item pop-up p-3 shadow-sm border rounded bg-light mt-2">
-                    <h6>Sports Week</h6>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, et?</p>
-                    <app-button bg="bg-secondary px-2 py-1" class="d-flex justify-content-end">More</app-button>
-                </div>
-                
-                <div class="item pop-up p-3 shadow-sm border rounded bg-light mt-2">
-                    <h6>Sports Week</h6>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, et?</p>
-                    <app-button bg="bg-secondary px-2 py-1" class="d-flex justify-content-end">More</app-button>
-                </div>
-                
-                <div class="item pop-up p-3 shadow-sm border rounded bg-light mt-2">
-                    <h6>Sports Week</h6>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, et?</p>
-                    <app-button bg="bg-secondary px-2 py-1" class="d-flex justify-content-end">More</app-button>
-                </div>
-                
-                <div class="item pop-up p-3 shadow-sm border rounded bg-light mt-2">
-                    <h6>Sports Week</h6>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, et?</p>
-                    <app-button bg="bg-secondary px-2 py-1" class="d-flex justify-content-end">More</app-button>
-                </div>
-                
             </div>
         </div>
+
+
+
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6" *ngIf="ShowDetail">
         <h1>Detail</h1>
         <div class="notification-detail border shadow-sm rounded p-4 pop-up">
             <div class="header p-2 d-flex">
@@ -51,9 +28,8 @@
                 </div>
                 <div class="w-100 d-flex flex-wrap align-content-center ">
                     <div class="w-100 ps-2 pt-3">
-                        <h5>John</h5>
-                        <hr class="my-0 ">
-                        <p>Ericson</p>
+                        <h5>{{selectedNotification.AbsentUsername}}</h5>
+                        <hr class="my-0">
                     </div>
                 </div>
             </div>
@@ -63,15 +39,13 @@
 
                 <div class="d-flex justify-content-between pe-2">
                     <h5>
-                        Attendance Alert
+                        {{selectedNotification.Title}}
                     </h5>
                 </div>
                 <hr class="my-0">
 
                 <div class="detail  pt-2">
-
-                    <p>Sir John Ericson made her third abbsent of this month.</p>
-
+                    <p>{{selectedNotification.AbsentUsername}} {{selectedNotification.Description}}</p>
                 </div>
 
 
@@ -89,7 +63,7 @@
                 <hr class="my-0 w-25">
 
                 <div class="detail  pt-2">
-                    <span>2nd May 2022</span>
+                    <span>{{selectedNotification.FirstAbsent}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between pe-2 mt-4">
@@ -100,7 +74,7 @@
                 <hr class="my-0 w-25">
 
                 <div class="detail  pt-2">
-                    <span>12th May 2022</span>
+                    <span>{{selectedNotification.SecondAbsent}}</span>
                 </div>
                 <div class="d-flex justify-content-between pe-2 mt-4">
                     <h5>
@@ -110,7 +84,7 @@
                 <hr class="my-0 w-25">
 
                 <div class="detail  pt-2">
-                    <span>22nd May 2022</span>
+                    <span>{{selectedNotification.ThirdAbsent}}</span>
                 </div>
 
 
@@ -119,7 +93,7 @@
 
 
             <div class="d-flex justify-content-end mt-2">
-                <a [routerLink]="['/send-email']" routerLinkActive="router-link-active" >
+                <a [routerLink]="['/send-email']" routerLinkActive="router-link-active">
                     <app-button bg="bg-secondary px-2 py-1 me-3">Send Notice</app-button>
                 </a>
             </div>

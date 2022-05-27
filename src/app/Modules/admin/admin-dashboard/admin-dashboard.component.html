@@ -12,7 +12,7 @@
 
                     <img src="/assets/images/icons/student-icon.jpg" icon width="76" height="68 " alt="">
                     <h6 title>Student</h6>
-                    <h6 class="my-0" value>1033</h6>
+                    <h6 class="my-0" value>{{studentCount}}</h6>
 
                     <div status>
                         <span class="align-self-center">11%</span>
@@ -28,7 +28,7 @@
 
                     <img src="/assets/images/icons/teaching-icon.png" icon width="90" height="60" alt="">
                     <h6 title>Faculty</h6>
-                    <h6 class="my-0" value>50</h6>
+                    <h6 class="my-0" value>{{facultyCount}}</h6>
 
                     <div status>
                         <span class="align-self-center">1%</span>
@@ -44,7 +44,7 @@
 
             <div class="col-sm-12 col-md-12 ps-lg-3 ps-5 pe-2  notification ">
 
-                <app-notification></app-notification>
+                <app-notification notificationsFor="admin"></app-notification>
 
             </div>
         </div>

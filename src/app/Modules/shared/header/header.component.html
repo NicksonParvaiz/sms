@@ -1,5 +1,5 @@
 <div class="header fixed-top">
-  <div class="d-flex   ms-2">
+  <div class="d-flex ms-2">
     <fa-icon [icon]="menuIcon" class="menuIcon " (click)="sidebarToggle()"></fa-icon>
     <h3 class="ms-4  mt-md-0 mt-1">Logo</h3>
   </div>
@@ -7,16 +7,18 @@
   <div class="d-flex">
 
     <div class="right-side">
-      <a [routerLink]="['/notification']" routerLinkActive="router-link-active">
+      <a [routerLink]="[currentRoute]" routerLinkActive="router-link-active">
         <fa-icon [icon]="notificationIcon"></fa-icon>
         <sup>2</sup>
       </a>
-      <span class="me-2 ms-4" id="dropdownMenuButton1" data-bs-toggle="dropdown">{{loginUser}}</span>
-      <fa-icon [icon]="dropDownIcon"></fa-icon>
+      <span class="me-2 " id="dropdownMenuButton1" data-bs-toggle="dropdown">{{loginUser}}</span>
 
-      
+
+      <button class="btn btn-primary" (click)="logout()">logout</button>
     </div>
-    <button class="btn btn-primary" (click)="logout()">logout</button>
 
   </div>
+
+
+
 </div>

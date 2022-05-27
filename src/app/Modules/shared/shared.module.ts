@@ -56,7 +56,7 @@ import { StudentProgressDetailComponent } from './student-progress-detail/studen
     SharedRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     DashboardComponent,

@@ -1,59 +1,17 @@
 <div class="p-3  assignment-list ">
 
-    <div class="notice-item shadow-sm pop-up rounded p-3 pb-2 mt-3 border">
-        <h6>Title</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, velit!</p>
-        <div class=" d-flex justify-content-end ">
+    <div class="notice-item shadow-sm pop-up rounded p-3 pb-2 mt-3 border" *ngFor="let item of data">
+        <h6>{{item.Title}}</h6>
+        <p>{{item.Description}}</p>
+        <!-- <div class=" d-flex justify-content-end ">
             <span class="text-secondary"> 13 out of 15</span>
+        </div> -->
+        <div class="d-flex justify-content-end">
+            <app-button bg="bg-secondary px-3 py-2" (click)="detail(item)" >More</app-button>
         </div>
     </div>
 
-    
-    <div class="notice-item shadow-sm pop-up rounded p-3 pb-2 mt-3 border">
-        <h6>Title</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, velit!</p>
-        <div class=" d-flex justify-content-end ">
-            <span class="text-secondary"> 13 out of 15</span>
-        </div>
-    </div>
-
-    
-    <div class="notice-item shadow-sm pop-up rounded p-3 pb-2 mt-3 border">
-        <h6>Title</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, velit!</p>
-        <div class=" d-flex justify-content-end ">
-            <span class="text-secondary"> 13 out of 15</span>
-        </div>
-    </div>
-
-    
-    <div class="notice-item shadow-sm pop-up rounded p-3 pb-2 mt-3 border">
-        <h6>Title</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, velit!</p>
-        <div class=" d-flex justify-content-end ">
-            <span class="text-secondary"> 13 out of 15</span>
-        </div>
-    </div>
-
-    
-    <div class="notice-item shadow-sm pop-up rounded p-3 pb-2 mt-3 border">
-        <h6>Title</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, velit!</p>
-        <div class=" d-flex justify-content-end ">
-            <span class="text-secondary"> 13 out of 15</span>
-        </div>
-    </div>
-
-    
-    <div class="notice-item shadow-sm pop-up rounded p-3 pb-2 mt-3 border">
-        <h6>Title</h6>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, velit!</p>
-        <div class=" d-flex justify-content-end ">
-            <span class="text-secondary"> 13 out of 15</span>
-        </div>
-    </div>
-
-    
+        
 
 
 </div>

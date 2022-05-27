@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class FacultyAssignmentComponent implements OnInit {
 
   constructor() { }
-
+  IsShowDetail = false;
   ngOnInit(): void {
   }
+
+  ShowDetail(e) {
+    // this.IsShowDetail = e;
+    console.log(e)
+  }
+
 
 }

@@ -1,3 +1,5 @@
+import { FacultyService } from './../../../Services/faculty.service';
+import { StudentsService } from './../../../Services/students.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private students: StudentsService , private faculty : FacultyService) { }
 
+  studentCount: Number;
+  facultyCount: Number;
   ngOnInit(): void {
+    this.studentCount = this.students.get().length;
+    this.facultyCount = this.faculty.get().length;
   }
 
 }

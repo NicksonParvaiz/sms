@@ -1,6 +1,7 @@
 import { StudentsService } from './../../../Services/students.service';
 import { Component, OnInit } from '@angular/core';
 import { student } from 'src/app/models/student.model';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-assignment-submissions',
@@ -11,7 +12,7 @@ export class AssignmentSubmissionsComponent implements OnInit {
 
   constructor(private StudentsService: StudentsService) { }
   data: student[];
-
+  backIcon = faArrowLeft;
 
   Showfilter = false;
   ngOnInit(): void {
@@ -22,4 +23,5 @@ export class AssignmentSubmissionsComponent implements OnInit {
   toggleFilter() {
     this.Showfilter = !this.Showfilter;
   }
+  
 }

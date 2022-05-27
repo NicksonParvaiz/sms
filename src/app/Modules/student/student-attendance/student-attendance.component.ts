@@ -9,7 +9,12 @@ export class StudentAttendanceComponent implements OnInit {
 
   constructor() { }
 
+  ShowFilter = false;
   ngOnInit(): void {
+  }
+
+  filterToggle(){
+    this.ShowFilter = !this.ShowFilter;
   }
 
 }

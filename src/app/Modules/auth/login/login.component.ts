@@ -15,13 +15,15 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
 
     this.loginForm = new FormGroup({
       'userName': new FormControl(''),
       'password': new FormControl('')
 
     });
+
+
   }
 
   logingIn() {
@@ -31,29 +33,29 @@ export class LoginComponent implements OnInit {
         x.username == this.loginForm.value.userName &&
         x.password == this.loginForm.value.password
     )
-
+    // let res = { username: 'nick', password: 'nick', role: 'student' };
 
     if (res) {
-      this.auth.loginUser = res;
       this.auth.login();
+      this.auth.loginUser = res;
     }
     else {
       this.auth.logout();
+      alert('Incorrect Credentials !!!')
     }
 
-    console.log(this.auth.loggedIn);
     let redirectTo: string;
     switch (this.auth.loginUser.role) {
       case 'admin':
-        redirectTo = 'admin';
+        redirectTo = 'admin/dashboard';
         break;
 
       case 'faculty':
-        redirectTo = 'faculty';
+        redirectTo = 'faculty/dashboard';
         break;
 
       case 'student':
-        redirectTo = 'student';
+        redirectTo = 'student/dashboard';
         break;
     }
 

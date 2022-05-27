@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Assignment } from 'src/app/models/assignment.model';
+import { AssignmentsService } from 'src/app/Services/assignments.service';
 
 @Component({
   selector: 'app-faculty-assignment-detail',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacultyAssignmentDetailComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private assignments : AssignmentsService) { }
+  data : Assignment;
   ngOnInit(): void {
+    this.data = this.assignments.SelectAssignment;
   }
 
+
+
 }
+

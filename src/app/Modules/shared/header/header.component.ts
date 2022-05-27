@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit, DoCheck {
   dropDownIcon = faCaretDown;
   menuIcon = faBars;
   loginUser: string;
+  currentRoute : string;
+
+
+
   ngOnInit(): void {
     this.loginUser = this.auth.loginUser.username;
 
@@ -29,6 +33,10 @@ export class HeaderComponent implements OnInit, DoCheck {
     else {
       this.menuIcon = faBars;
     }
+
+
+    this.currentRoute = '/'+this.auth.loginUser.role +'/notification';
+
   }
   sidebarToggle() {
     this.sidebar.isExpand = !this.sidebar.isExpand;

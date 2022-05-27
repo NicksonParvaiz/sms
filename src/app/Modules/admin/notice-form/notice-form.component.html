@@ -1,10 +1,10 @@
 <div class="p-4 ">
-    <!-- <a [routerLink]="['/noticeboard']" routerLinkActive="router-link-active" class="my-3">
+    <a [routerLink]="['../']" routerLinkActive="router-link-active" class="my-3">
         <app-button bg="bg-secondary px-3 ms-4 ms-lg-0 py-1">
             <fa-icon [icon]="backIcon"></fa-icon>
             back
         </app-button>
-    </a> -->
+    </a>
     <form [formGroup]="NoticeForm" (ngSubmit)="AddNotice()">
         <div class="row  border shadow-sm pop-up rounded p-md-5 p-3 ms-3 ms-lg-0 mt-3">
 

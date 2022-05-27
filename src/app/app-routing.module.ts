@@ -32,7 +32,6 @@ const routes: Routes = [
 
   {
     path: 'admin', canActivate: [AuthguardGuard], canActivateChild: [AuthguardGuard], component: MainComponent, children: [
-      { path: '', component: AdminDashboardComponent },
       { path: 'dashboard', component: AdminDashboardComponent },
       { path: 'student', component: StudentsComponent },
       { path: 'studentEidt', component: StudentEditComponent },
@@ -51,27 +50,28 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'faculty', component: MainComponent, children: [
-      { path: '', component: FacultyDashboardComponent },
+    path: 'faculty', canActivate: [AuthguardGuard], canActivateChild: [AuthguardGuard], component: MainComponent, children: [
       { path: 'dashboard', component: FacultyDashboardComponent },
       { path: 'student', component: StudentsComponent },
       { path: 'attendance', component: AttendanceComponent },
       { path: 'noticeboard', component: NoticeboardComponent },
       { path: 'assignments', component: FacultyAssignmentComponent },
       { path: 'add-assignment', component: AssignmentFormComponent },
-      { path: 'assignment-submission', component: AssignmentSubmissionsComponent },
+      { path: 'submission', component: AssignmentSubmissionsComponent },
+      { path: 'notification', component: NotificationPanelComponent },
+
     ]
   },
 
   {
-    path: 'student', component: MainComponent, children: [
-      { path: '', component: StudentDashboardComponent },
+    path: 'student',canActivate: [AuthguardGuard], canActivateChild: [AuthguardGuard], component: MainComponent, children: [
       { path: 'dashboard', component: StudentDashboardComponent },
       { path: 'progress', component: StudentProgressComponent },
       { path: 'attendance', component: StudentAttendanceComponent },
       { path: 'noticeboard', component: StudentNoticeboardComponent },
       { path: 'assignments', component: StudentAssignmentComponent },
       { path: 'Profile', component: ProfileComponent },
+      { path: 'notification', component: NotificationPanelComponent },
 
     ]
   },
