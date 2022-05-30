@@ -41,7 +41,7 @@ export class StudentsService {
       Address: 'Korangi Karachi',
       DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9',
-      FeeStatus: 'Paid'
+      FeeStatus: 'UnPaid'
     },
     {
       RollNo: 103,
@@ -69,7 +69,7 @@ export class StudentsService {
       Address: 'Korangi Karachi',
       DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9',
-      FeeStatus: 'Paid'
+      FeeStatus: 'UnPaid'
     },
 
 
@@ -100,7 +100,7 @@ export class StudentsService {
       Address: 'Korangi Karachi',
       DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9',
-      FeeStatus: 'Paid'
+      FeeStatus: 'UnPaid'
     },
     {
       RollNo: 107,
@@ -187,7 +187,7 @@ export class StudentsService {
       Address: 'Korangi Karachi',
       DateOfBirth: '12th May 2016',
       CNIC: '42201-12345678-9',
-      FeeStatus: 'Paid'
+      FeeStatus: 'UnPaid'
     },
 
   ];
@@ -209,10 +209,10 @@ export class StudentsService {
           x.FatherName.toUpperCase().includes(searchInp.toUpperCase()) ||
           x.Class.toUpperCase().includes(searchInp.toUpperCase()) ||
           x.ClassTeacher.toUpperCase().includes(searchInp.toUpperCase()) ||
-          x.Section.toUpperCase().includes(searchInp.toUpperCase()) 
+          x.Section.toUpperCase().includes(searchInp.toUpperCase())
       )
     }
-    else{
+    else {
       return this.filteredStudents;
     }
   }
@@ -236,7 +236,8 @@ export class StudentsService {
 
       this.filteredStudents = this.filteredStudents.filter(x =>
         x.ClassTeacher === FilterCriteria.ClassTeacher
-      )
+      );
+      
 
     }
     else { }

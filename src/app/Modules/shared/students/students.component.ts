@@ -1,6 +1,6 @@
 import { StudentFilterService } from './../student-filter/student-filter.service';
 import { StudentsService } from './../../../Services/students.service';
-import { Component, OnInit, DoCheck, SimpleChanges } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { faClose , faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { filter } from 'rxjs';
 import { Student } from 'src/app/models/Student.model';
@@ -37,15 +37,18 @@ export class StudentsComponent implements OnInit, DoCheck {
     if (this.studentsService.filteredStudents.length !== 0) {
       this.data = this.studentsService.filteredStudents;
     }
+    this.FilterComponenets = this.StudentFilterService.filterCriteria;
 
+    
     this.data = this.studentsService.filteringStudent(this.StudentFilterService.filterCriteria);
     this.data = this.studentsService.search(this.SearchInp);
 
     this.ShowFilter = this.StudentFilterService.ShowFilter;
-    this.FilterComponenets = this.StudentFilterService.filterCriteria;
 
+    
   }
 
+ 
 
   detailShow = false;
   closeIcon = faClose;

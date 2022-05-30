@@ -10,25 +10,34 @@ export class StudentFilterService {
   constructor(private studentService: StudentsService) { }
 
   filterCriteria: StudentFilter = {
-    Class: '',
-    Section: '',
-    ClassTeacher: '',
-    FeeStatus: ''
+    Class: 'All',
+    Section: 'All',
+    ClassTeacher: 'All',
+    FeeStatus: 'All'
 
   };
 
   ShowFilter = false;
 
-  getFilteredStudent() {
+  // getFilteredStudent() {
+
+  //   return this.studentService.get().filter(x =>
+  //     x.Class == this.filterCriteria.Class &&
+  //     x.ClassTeacher == this.filterCriteria.ClassTeacher &&
+  //     x.Section == this.filterCriteria.Section &&
+  //     x.FeeStatus == this.filterCriteria.FeeStatus
+  //   )
+  // }
 
 
 
-    return this.studentService.get().filter(x =>
-      x.Class == this.filterCriteria.Class &&
-      x.ClassTeacher == this.filterCriteria.ClassTeacher &&
-      x.Section == this.filterCriteria.Section
-      // x.FeeStatus == this.filterCriteria.FeeStatus
-    )
-  }
+  Classes: string[];
+  Sections: string[];
+  ClassTeachers: string[];
+  FeeStatus: string[];
+
+
+
+
 
 }
