@@ -17,6 +17,37 @@
             </div>
         </div>
 
+        <div class="p-2  d-flex ">
+            <div class="filter-component p-1 bg-light rounded-pill border d-flex justify-content-between"
+                *ngIf="FilterComponenets.Class !== '' && FilterComponenets.Class !== 'All' ">
+                <span class="me-2">{{FilterComponenets.Class}}</span>
+                <fa-icon [icon]="componentCloseBtnIcon"  (click)="eliminatingFilterCriteria('Class')"></fa-icon>
+            </div>
+
+
+            <div class="filter-component p-1 bg-light rounded-pill border d-flex justify-content-between"
+                *ngIf="FilterComponenets.Section!== '' && FilterComponenets.Section !== 'All' ">
+                <span class="me-2">{{FilterComponenets.Section}}</span>
+                <fa-icon [icon]="componentCloseBtnIcon"  (click)="eliminatingFilterCriteria('Section')"></fa-icon>
+            </div>
+
+
+            <div class="filter-component p-1 bg-light rounded-pill border d-flex justify-content-between"
+                *ngIf="FilterComponenets.ClassTeacher !== '' && FilterComponenets.ClassTeacher!== 'All'  ">
+                <span class="me-2">{{FilterComponenets.ClassTeacher}}</span>
+                <fa-icon [icon]="componentCloseBtnIcon"  (click)="eliminatingFilterCriteria('ClassTeacher')"></fa-icon>
+            </div>
+
+
+            <div class="filter-component p-1 bg-light rounded-pill border d-flex justify-content-between"
+                *ngIf="FilterComponenets.FeeStatus !== '' && FilterComponenets.FeeStatus !== 'All' ">
+                <span class="me-2">{{FilterComponenets.FeeStatus}}</span>
+                <fa-icon [icon]="componentCloseBtnIcon"  (click)="eliminatingFilterCriteria('FeeStatus')"></fa-icon>
+            </div>
+
+
+        </div>
+
         <div class="d-flex justify-content-end">
             <app-student-filter *ngIf="ShowFilter" class="student-filter pop-up"></app-student-filter>
         </div>
@@ -27,7 +58,8 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Father's Name</th>
+                        <th>Section</th>
+                        <th>Teacher </th>
                         <th>Class</th>
                         <th>View Profile</th>
                     </tr>
@@ -37,7 +69,8 @@
                     <tr *ngFor="let item of data">
                         <td>{{item.RollNo}}</td>
                         <td>{{item.Name}}</td>
-                        <td>{{item.FatherName}}</td>
+                        <td>{{item.Section}}</td>
+                        <td>{{item.ClassTeacher}}</td>
                         <td>{{item.Class}}</td>
                         <td class="d-flex justify-content-center">
                             <app-button bg="bg-secondary px-3 py-1" (click)="showDetail(item)">more</app-button>
@@ -107,7 +140,7 @@
                             <span>Class</span>
                         </div>
                         <div class="col-8">
-                            <span>{{selectedStudent.Class}}  </span>
+                            <span>{{selectedStudent.Class}} </span>
                         </div>
                     </div>
                     <div class="row mt-2 ">
@@ -212,7 +245,7 @@
 
 
             <div class="d-flex justify-content-end mt-2">
-                <a [routerLink]="['/admin/student-progress']" routerLinkActive="router-link-active" >
+                <a [routerLink]="['/admin/student-progress']" routerLinkActive="router-link-active">
                     <app-button bg="bg-secondary px-2 py-1 me-3">View Progress</app-button>
                 </a>
             </div>

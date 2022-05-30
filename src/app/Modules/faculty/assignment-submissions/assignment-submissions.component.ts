@@ -1,6 +1,6 @@
 import { StudentsService } from './../../../Services/students.service';
 import { Component, OnInit } from '@angular/core';
-import { student } from 'src/app/models/student.model';
+import { Student } from 'src/app/models/Student.model';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -11,7 +11,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 export class AssignmentSubmissionsComponent implements OnInit {
 
   constructor(private StudentsService: StudentsService) { }
-  data: student[];
+  data: Student[];
   backIcon = faArrowLeft;
 
   Showfilter = false;

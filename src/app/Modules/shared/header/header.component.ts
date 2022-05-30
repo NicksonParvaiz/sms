@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit, DoCheck {
 
 
   ngOnInit(): void {
+    this.auth.loginUser = JSON.parse(localStorage.getItem('loginUser'));
     this.loginUser = this.auth.loginUser.username;
 
   }

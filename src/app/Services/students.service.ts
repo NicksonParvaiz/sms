@@ -1,7 +1,8 @@
 import { StudentFilterService } from './../Modules/shared/student-filter/student-filter.service';
 import { Injectable } from '@angular/core';
-import { student } from '../models/student.model';
 import { Location } from '@angular/common';
+import { Student } from '../models/Student.model';
+import { StudentFilter } from '../models/StudentFilter.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,113 +10,258 @@ import { Location } from '@angular/common';
 export class StudentsService {
 
   constructor(
-    private studentFilterService: StudentFilterService,
-    private location : Location
-    ) { }
+    private location: Location,
+
+  ) { }
 
   students = [
     {
-      RollNo: 101, Name: 'John', FatherName: 'Ericson', Class: '3rd', Section: 'Green', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'johneric@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
+      RollNo: 101,
+      Name: 'John',
+      FatherName: 'Ericson',
+      Class: '1st',
+      Section: 'Red',
+      ClassTeacher: 'Sir Farhan',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: true
+      RollNo: 102,
+      Name: 'Rabeet',
+      FatherName: 'Asad',
+      Class: '1st',
+      Section: 'Green',
+      ClassTeacher: 'Sir Asalam',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 103, Name: 'Farhan', FatherName: 'Ramzan', Class: '1st', Section: 'Red', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'farhan@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
+      RollNo: 103,
+      Name: 'Ansar',
+      FatherName: 'Asad',
+      Class: '1st',
+      Section: 'Blue',
+      ClassTeacher: 'Sir Subhan',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 101, Name: 'John', FatherName: 'Ericson', Class: '3rd', Section: 'Green', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'johneric@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
+      RollNo: 104,
+      Name: 'Junaid',
+      FatherName: 'Akhtar',
+      Class: '1st',
+      Section: 'Yellow',
+      ClassTeacher: 'Sir Moiz',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
+    },
+
+
+
+    {
+      RollNo: 105,
+      Name: 'Zain',
+      FatherName: 'Ali',
+      Class: '2nd',
+      Section: 'Red',
+      ClassTeacher: 'Sir Shariq',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: true
+      RollNo: 106,
+      Name: 'Hassan',
+      FatherName: 'Ali',
+      Class: '2nd',
+      Section: 'Green',
+      ClassTeacher: 'Sir Shahrukh',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 103, Name: 'Farhan', FatherName: 'Ramzan', Class: '1st', Section: 'Red', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'farhan@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
+      RollNo: 107,
+      Name: 'Anus',
+      FatherName: 'Khan',
+      Class: '2nd',
+      Section: 'Blue',
+      ClassTeacher: 'Sir Nabeel',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 101, Name: 'John', FatherName: 'Ericson', Class: '3rd', Section: 'Green', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'johneric@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
+      RollNo: 108,
+      Name: 'Maaz',
+      FatherName: 'Khan',
+      Class: '2nd',
+      Section: 'Yellow',
+      ClassTeacher: 'Sir Luke',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
+    },
+
+
+
+    {
+      RollNo: 109,
+      Name: 'Mubashir',
+      FatherName: 'Saleem',
+      Class: '3rd',
+      Section: 'Red',
+      ClassTeacher: 'Sir Wajahat',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: true
+      RollNo: 110,
+      Name: 'Hammad',
+      FatherName: 'Khan',
+      Class: '3rd',
+      Section: 'Green',
+      ClassTeacher: 'Sir Shuja',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 103, Name: 'Farhan', FatherName: 'Ramzan', Class: '1st', Section: 'Red', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'farhan@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
+      RollNo: 111,
+      Name: 'Moin',
+      FatherName: 'Ali',
+      Class: '3rd',
+      Section: 'Blue',
+      ClassTeacher: 'Sir Sarfaraz',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
     {
-      RollNo: 101, Name: 'John', FatherName: 'Ericson', Class: '3rd', Section: 'Green', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'johneric@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
+      RollNo: 112,
+      Name: 'Shahbaz',
+      FatherName: 'Khan',
+      Class: '3rd',
+      Section: 'Yellow',
+      ClassTeacher: 'Sir Waqar',
+      Phone: '0342-1234567',
+      Email: 'johneric@gmail.com',
+      Address: 'Korangi Karachi',
+      DateOfBirth: '12th May 2016',
+      CNIC: '42201-12345678-9',
+      FeeStatus: 'Paid'
     },
-    {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: true
-    },
-    {
-      RollNo: 103, Name: 'Farhan', FatherName: 'Ramzan', Class: '1st', Section: 'Red', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'farhan@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
-    },
-    {
-      RollNo: 101, Name: 'John', FatherName: 'Ericson', Class: '3rd', Section: 'Green', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'johneric@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
-    },
-    {
-      RollNo: 102, Name: 'Nick', FatherName: 'James', Class: '4th', Section: 'Blue', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'nick@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: true
-    },
-    {
-      RollNo: 103, Name: 'Farhan', FatherName: 'Ramzan', Class: '1st', Section: 'Red', ClassTeacher: 'Sir Subhan',
-      Phone: '0342-1234567', Email: 'farhan@gmail.com', Address: 'Korangi Karachi', DateOfBirth: '12th May 2016',
-      CNIC: '42201-12345678-9', FeeStatus: false
-    },
+
   ];
+
+  filteredStudents: Student[] = [];
 
   get() {
     return this.students;
   }
 
   search(searchInp: string) {
-    return this.students.filter(
-      x =>
-        x.RollNo.toString().includes(searchInp) ||
-        x.Name.toUpperCase().includes(searchInp.toUpperCase()) ||
-        x.FatherName.toUpperCase().includes(searchInp.toUpperCase()) ||
-        x.Class.toUpperCase().includes(searchInp.toUpperCase())
-    )
+
+    if (searchInp !== '') {
+
+      return this.filteredStudents.filter(
+        x =>
+          x.RollNo.toString().includes(searchInp) ||
+          x.Name.toUpperCase().includes(searchInp.toUpperCase()) ||
+          x.FatherName.toUpperCase().includes(searchInp.toUpperCase()) ||
+          x.Class.toUpperCase().includes(searchInp.toUpperCase()) ||
+          x.ClassTeacher.toUpperCase().includes(searchInp.toUpperCase()) ||
+          x.Section.toUpperCase().includes(searchInp.toUpperCase()) 
+      )
+    }
+    else{
+      return this.filteredStudents;
+    }
   }
 
-  filter() {
-    let cretaria = this.studentFilterService.filterCriteria;
-    // return this.students.filter(
-    //   x =>
-    //   x.Class.toUpperCase().includes(cretaria.class.toUpperCase())
-    // )
+  filteringStudent(FilterCriteria: StudentFilter) {
+
+
+
+    if (FilterCriteria.Class === '' || FilterCriteria.Class === 'All') {
+
+      this.filteredStudents = this.students;
+
+    }
+    else {
+      this.filteredStudents = this.students.filter(x =>
+        x.Class === FilterCriteria.Class
+      )
+    }
+
+    if (FilterCriteria.ClassTeacher !== '' && FilterCriteria.ClassTeacher !== 'All') {
+
+      this.filteredStudents = this.filteredStudents.filter(x =>
+        x.ClassTeacher === FilterCriteria.ClassTeacher
+      )
+
+    }
+    else { }
+    if (FilterCriteria.Section !== '' && FilterCriteria.Section !== 'All') {
+      this.filteredStudents = this.filteredStudents.filter(x =>
+        x.Section === FilterCriteria.Section
+      )
+    } else { }
+
+    if (FilterCriteria.FeeStatus !== '' && FilterCriteria.FeeStatus !== 'All') {
+      this.filteredStudents = this.filteredStudents.filter(x =>
+        x.FeeStatus === FilterCriteria.FeeStatus
+      )
+    } else { }
+
+
+
+    return this.filteredStudents;
+
+
   }
 
-  updatedStudent: student;
+  updatedStudent: Student;
   update(data: any) {
-    
+
     let index = this.students.findIndex((student) => {
       return student.RollNo == data.RollNo;
     })
@@ -136,7 +282,6 @@ export class StudentsService {
 
     }
 
-    this.students.splice(index, 1, this.updatedStudent)
 
 
     this.location.back();

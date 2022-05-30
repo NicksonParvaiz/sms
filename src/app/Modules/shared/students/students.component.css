@@ -42,3 +42,10 @@ thead  {
     right: -0.5px;
     
 }
+
+.filter-component{
+    width: fit-content;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

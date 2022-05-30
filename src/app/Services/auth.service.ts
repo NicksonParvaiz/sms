@@ -18,13 +18,13 @@ export class AuthService {
     username: string, password: string, role: string
   };
 
-  loggedIn = false;
+  loggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
 
   isAuthenticated() {
     const promise = new Promise(
       (resolve, reject) => {
         setTimeout(() => {
-          resolve(this.loggedIn);
+          resolve(JSON.parse(localStorage.getItem('isLoggedIn')));
         }, 0);
       }
     )
@@ -33,11 +33,12 @@ export class AuthService {
 
 
   login() {
-    this.loggedIn = true;
+    localStorage.setItem('isLoggedIn' , JSON.stringify(true))
   }
 
   logout() {
-    this.loggedIn = false;
+    localStorage.setItem('isLoggedIn' , JSON.stringify(false))
+
   }
 
 

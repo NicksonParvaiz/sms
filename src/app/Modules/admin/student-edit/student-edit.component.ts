@@ -4,7 +4,7 @@ import { ActivatedRoute, Route, Router, Routes } from '@angular/router';
 import { StudentsService } from './../../../Services/students.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { student } from 'src/app/models/student.model';
+import { Student } from 'src/app/models/Student.model';
 import { faArrowLeft, faImage } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common'
 
@@ -24,7 +24,7 @@ export class StudentEditComponent implements OnInit {
   backIcon = faArrowLeft;
 
   studentEditForm: FormGroup;
-  selectedStudent: student[];
+  selectedStudent: Student[];
 
   ngOnInit(): void {
 

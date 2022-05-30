@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
     });
 
-
+    this.auth.loginUser = JSON.parse(localStorage.getItem('loginUser'));
   }
 
   logingIn() {
@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
         x.username == this.loginForm.value.userName &&
         x.password == this.loginForm.value.password
     )
-    // let res = { username: 'nick', password: 'nick', role: 'student' };
-
+    // let res = { username: 'nick', password: 'nick', role: 'admin' };
+    localStorage.setItem('loginUser' , JSON.stringify(res));
     if (res) {
       this.auth.login();
-      this.auth.loginUser = res;
+      // this.auth.loginUser = JSON.parse(localStorage.getItem('loginUser'));
     }
     else {
       this.auth.logout();

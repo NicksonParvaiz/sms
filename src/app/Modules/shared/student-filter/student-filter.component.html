@@ -1,6 +1,6 @@
 <div class="p-3 bg-white shadow rounded">
 
-    <form  [formGroup]="FilterForm" (ngSubmit)="submitFilter()" >
+    <form [formGroup]="FilterForm" (ngSubmit)="submitFilter()">
 
         <!-- ------------------ Class ------------------ -->
         <div class="row mt-2">
@@ -8,11 +8,11 @@
                 <label class="">Class</label>
             </div>
             <div class="col-7">
-                <select name="" class="form-select" formControlName="class" >
+                <select name="" class="form-select" formControlName="class">
+                    <option value="All">All</option>
                     <option value="1st">1st </option>
                     <option value="2nd">2nd</option>
                     <option value="3rd">3rd </option>
-                    <option value="4th">4th </option>
                 </select>
             </div>
         </div>
@@ -24,6 +24,7 @@
             </div>
             <div class="col-7">
                 <select name="" class="form-select" formControlName="section">
+                    <option value="All">All</option>
                     <option value="Green">Green</option>
                     <option value="Red">Red</option>
                     <option value="Blue">Blue</option>
@@ -40,10 +41,20 @@
             </div>
             <div class="col-7 ">
                 <select name="" class="form-select " formControlName="classTeacher">
-                    <option value="Sir Subhan">Sir Subhan</option>
+                    <option value="All">All</option>
                     <option value="Sir Farhan">Sir Farhan</option>
-                    <option value="Sir Harry">Sir Harry</option>
-                    <option value="Mis Nazish">Mis Nazish</option>
+                    <option value="Sir Asalam">Sir Asalam</option>
+                    <option value="Sir Subhan">Sir Subhan</option>
+                    <option value="Sir Moiz">Sir Moiz</option>
+                    <option value="Sir Shariq">Sir Shariq</option>
+                    <option value="Sir Shahrukh">Sir Shahrukh</option>
+                    <option value="Sir Nabeel">Sir Nabeel</option>
+                    <option value="Sir Luke">Sir Luke</option>
+                    <option value="Sir Wajahat">Sir Wajahat</option>
+                    <option value="Sir Shuja">Sir Shuja</option>
+                    <option value="Sir Sarfaraz">Sir Sarfaraz</option>
+                    <option value="Sir Waqar">Sir Waqar</option>
+
                 </select>
             </div>
         </div>
@@ -56,15 +67,16 @@
             </div>
             <div class="col-7 ">
                 <select name="" class="form-select " formControlName="feeStatus">
-                    <option value="Paid">Paid</option>
-                    <option value="Un paid">Un paid</option>
+                    <option value="All">All</option>
+                    <option value='Paid'>Paid</option>
+                    <option value='UnPaid'>UnPaid</option>
 
                 </select>
             </div>
         </div>
 
         <div class="d-flex justify-content-end mt-3">
-            <app-button bg="bg-secondary px-3 py-1" >Apply Filter</app-button>
+            <app-button bg="bg-secondary px-3 py-1">Apply Filter</app-button>
         </div>
 
     </form>

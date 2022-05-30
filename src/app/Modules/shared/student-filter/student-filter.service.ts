@@ -1,3 +1,5 @@
+import { StudentFilter } from './../../../models/StudentFilter.model';
+import { StudentsService } from './../../../Services/students.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,10 +7,28 @@ import { Injectable } from '@angular/core';
 })
 export class StudentFilterService {
 
-  constructor() { }
+  constructor(private studentService: StudentsService) { }
 
-  filterCriteria: any;
+  filterCriteria: StudentFilter = {
+    Class: '',
+    Section: '',
+    ClassTeacher: '',
+    FeeStatus: ''
 
-  
+  };
+
+  ShowFilter = false;
+
+  getFilteredStudent() {
+
+
+
+    return this.studentService.get().filter(x =>
+      x.Class == this.filterCriteria.Class &&
+      x.ClassTeacher == this.filterCriteria.ClassTeacher &&
+      x.Section == this.filterCriteria.Section
+      // x.FeeStatus == this.filterCriteria.FeeStatus
+    )
+  }
 
 }

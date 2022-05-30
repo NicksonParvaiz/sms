@@ -1,4 +1,4 @@
-export class student {
+export class Student {
     constructor(
         public RollNo: number,
         public Name: string,
@@ -11,7 +11,7 @@ export class student {
         public Address: string,
         public DateOfBirth: string,
         public CNIC: string,
-        public FeeStatus : boolean
+        public FeeStatus : string
 
 
     ) {
