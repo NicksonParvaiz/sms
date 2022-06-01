@@ -48,7 +48,7 @@
 
         </div>
 
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end" (mouseleave)="toggleFilter('close')" >
             <app-student-filter *ngIf="ShowFilter" class="student-filter pop-up"></app-student-filter>
         </div>
         <div class="border rounded pop-up shadow-sm student-list p-3 pt-1" (click)="toggleFilter('close')">

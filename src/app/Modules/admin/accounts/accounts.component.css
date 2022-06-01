@@ -1,3 +1,8 @@
 .accounts{
     min-height: 260px;
 }
+
+a{
+    text-decoration: none;
+    color: #000;
+}

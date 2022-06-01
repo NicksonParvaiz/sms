@@ -25,6 +25,9 @@ import { BackComponent } from './back/back.component';
 import { NoticeListComponent } from './notice-list/notice-list.component';
 import { AttendanceListComponent } from './attendance-list/attendance-list.component';
 import { StudentProgressDetailComponent } from './student-progress-detail/student-progress-detail.component';
+import { DonutChartComponent } from './donut-chart/donut-chart.component';
+import { NgChartsModule } from 'ng2-charts';
+import { BarGraphComponent } from './bar-graph/bar-graph.component';
 
 
 @NgModule({
@@ -49,7 +52,9 @@ import { StudentProgressDetailComponent } from './student-progress-detail/studen
     BackComponent,
     NoticeListComponent,
     AttendanceListComponent,
-    StudentProgressDetailComponent
+    StudentProgressDetailComponent,
+    DonutChartComponent,
+    BarGraphComponent
   ],
   imports: [
     CommonModule,
@@ -57,6 +62,7 @@ import { StudentProgressDetailComponent } from './student-progress-detail/studen
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
+    NgChartsModule
   ],
   exports:[
     DashboardComponent,
@@ -79,7 +85,11 @@ import { StudentProgressDetailComponent } from './student-progress-detail/studen
     BackComponent,
     NoticeListComponent,
     AttendanceListComponent,
-    StudentProgressDetailComponent
+    StudentProgressDetailComponent,
+    DonutChartComponent,
+    BarGraphComponent
+
+
 
   ]
 })

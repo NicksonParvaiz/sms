@@ -1,10 +1,10 @@
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between ">
     <h3 class="mb-3">Student Progress</h3>
-    <span (click)="filterToggle()" > <img src="/assets/images/icons/filter-icon.png" width="20" alt="">  Filter</span>
+    <span (click)="filterToggle()"> <img src="/assets/images/icons/filter-icon.png" width="20" alt=""> Filter</span>
 </div>
 <div class="row">
-      <!-- =================== Filter ===================  -->
-      <div class="d-flex justify-content-end" *ngIf="ShowFilter">
+    <!-- =================== Filter ===================  -->
+    <div class="d-flex justify-content-end" *ngIf="ShowFilter">
 
         <div class="border p-3 rounded shadow-sm filter pop-up ">
             <form>
@@ -26,69 +26,84 @@
     <!-- =================== Filter ===================  -->
 
 </div>
-<div class="row">
-    
-    <div class="col-lg-6">
-        <div class="row">
-            <div class="col-6 ">
-                <div class="card pop-up p-3 shadow-sm">
-                    <div class="d-flex justify-content-between">
-                        <h6>GPA</h6>
-                        <!-- <span>May</span> -->
-                    </div>
-                    <div>
-                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
-                    </div>
+<div class="row ">
+
+    <div class=" col-lg-4 col-md-4 mb-4 mb-lg-0 mb-md-0 ">
+        <div class="card pop-up p-2 shadow-sm h-100">
+            <div class="row  my-3">
+                <div class="col-5">
+                    <img src="/assets/images/student.jpg" class="w-100" alt="">
                 </div>
-            </div>
-            <div class="col-6 ">
-                <div class="card pop-up p-3 shadow-sm">
-                    <div class="d-flex justify-content-between">
-                        <h6>CGPA</h6>
-                        <!-- <span>May</span> -->
-                    </div>
-                    <div>
-                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
-                    </div>
+                <div class="col-7">
+                    <h6 class="mt-3">John Everist</h6>
+                    <hr>
+                    <p class="my-0">James</p>
+                    <p>6th Green</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-6 mt-3 mt-lg-0">
-      
 
-        <div class="row">
-            <div class="col-6 ">
-                <div class="card pop-up p-3 shadow-sm">
-                    <div class="d-flex justify-content-between">
-                        <h6>GPA</h6>
-                        <!-- <span>May</span> -->
-                    </div>
-                    <div>
-                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
-                    </div>
-                </div>
+    <div class="col-6 col-lg-2 col-md-3">
+        <div class="card pop-up p-2 shadow-sm w-100">
+            <div class="d-flex justify-content-between">
+                <h6>GPA</h6>
+                <!-- <span>May</span> -->
             </div>
-            <div class="col-6 ">
-                <div class="card pop-up p-3 shadow-sm">
-                    <div class="d-flex justify-content-between">
-                        <h6>CGPA</h6>
-                        <!-- <span>May</span> -->
-                    </div>
-                    <div>
-                        <img src="/assets/images/Faculty-Dashboard donut graph.png" class="w-100" alt="">
-                    </div>
-                </div>
+            <div>
+                <app-donut-chart [Total]="4" [Obtain]="3.2"></app-donut-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2 col-md-3">
+        <div class="card pop-up p-2 shadow-sm">
+            <div class="d-flex justify-content-between">
+                <h6>CGPA</h6>
+                <!-- <span>May</span> -->
+            </div>
+            <div>
+                <app-donut-chart [Total]="4" [Obtain]="3.2" ></app-donut-chart>
+
             </div>
         </div>
 
+    </div>
+    <div class="col-6 col-lg-2 mt-4 mt-lg-0 mt-md-0 col-md-3 ">
 
+        <div class="card pop-up p-2 shadow-sm">
+            <div class="d-flex justify-content-between">
+                <h6>GPA</h6>
+                <!-- <span>May</span> -->
+            </div>
+            <div>
+                <app-donut-chart [Total]="4" [Obtain]="3.2"></app-donut-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2 mt-4 mt-lg-0 mt-md-0 col-md-3 ">
+        <div class="card pop-up p-2 shadow-sm">
+            <div class="d-flex justify-content-between">
+                <h6>CGPA</h6>
+                <!-- <span>May</span> -->
+            </div>
+            <div>
+                <app-donut-chart [Total]="4" [Obtain]="3.2" ></app-donut-chart>
+
+            </div>
+        </div>
     </div>
 </div>
 
 
-<div class="row mt-4 pt-2  px-3">
-    <div class="border shadow-sm p-3 pop-up rounded">
-        <img src="/assets/images/graph.jpg" class="w-100" alt="">
+<div class="row mt-4 ">
+    <div class="col-lg-10  ">
+        <div class="card border shadow-sm p-3 pop-up rounded">
+            <app-bar-graph graphFor="both"></app-bar-graph>
+        </div>
+    </div>
+    <div class="col-lg-2 ">
+        <div class="card border shadow-sm p-3 pop-up rounded h-100">
+        </div>
+
     </div>
 </div>

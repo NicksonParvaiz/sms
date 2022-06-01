@@ -6,14 +6,14 @@
 
     <div class="d-flex justify-content-end ">
         <div class="accounts-filter p-4 col-lg-3 col-8 rounded pop-up  shadow bg-white" *ngIf="filterIsShow">
-            <form>
+            <form [formGroup]="filterForm" (submit)="filtering()">
                 <div class="form-group ">
                     <label>From</label>
-                    <input type="date" class="form-control">
+                    <input type="month" class="form-control" formControlName="fromDate">
                 </div>
                 <div class="form-group mt-3">
                     <label>To</label>
-                    <input type="date" class="form-control">
+                    <input type="month" class="form-control" formControlName="toDate">
                 </div>
                 <div class="form-group mt-3 d-flex justify-content-end mt-5">
                     <app-button bg="bg-secondary px-3 py-1">Apply Filter</app-button>
@@ -26,30 +26,40 @@
 
     <div class="row shadow-sm border rounded p-4 px-0 px-lg-4 mt-lg-4 mt-4 ">
         <div class="col-lg-12">
-            <ul class="nav nav-tabs" id="myTab">
-                <li class="nav-item">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                        type="button">All</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                        type="button">Fees</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-                        type="button">Salary</button>
-                </li>
+            <div class="d-flex justify-content-between">
 
-            </ul>
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home-tab-pane" type="button">All</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane" type="button">Fees</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                            data-bs-target="#contact-tab-pane" type="button">Salary</button>
+                    </li>
+
+                </ul>
+
+                <div class=" d-flex flex-wrap align-content-center border-bottom">
+                    <span class="ms-0">From : {{FromDate}}</span>
+                    <span class="ms-5 me-0">To : {{ToDate}}</span>
+                </div>
+            </div>
+
+
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active p-2 py-3" id="home-tab-pane" tabindex="0">
-                    <img src="/assets/images/graph.jpg" class="w-100" alt="">
+                    <app-bar-graph graphFor="both"></app-bar-graph>
                 </div>
                 <div class="tab-pane fade p-2 py-3" id="profile-tab-pane" tabindex="0">
-                    <img src="/assets/images/graph.jpg" class="w-100" alt="">
+                    <app-bar-graph graphFor="fees"></app-bar-graph>
                 </div>
                 <div class="tab-pane fade p-2 py-3" id="contact-tab-pane" tabindex="0">
-                    <img src="/assets/images/graph.jpg" class="w-100" alt="">
+                    <app-bar-graph graphFor="salaries"></app-bar-graph>
                 </div>
             </div>
         </div>

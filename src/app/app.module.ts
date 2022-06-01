@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './Modules/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainComponent } from './main-template/main/main.component';
+import { NgChartsModule } from 'ng2-charts';
  
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MainComponent } from './main-template/main/main.component';
     AdminModule,
     FacultyModule,
     FacultyModule,
-    StudentModule
+    StudentModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
